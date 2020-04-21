@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3810322B244EE6B600113AC1 /* ProductHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38103229244EE6B600113AC1 /* ProductHeaderCell.swift */; };
+		3810322C244EE6B600113AC1 /* ProductHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */; };
 		388C14AB244E936E003323F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AA244E936E003323F2 /* AppDelegate.swift */; };
 		388C14AD244E936E003323F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AC244E936E003323F2 /* SceneDelegate.swift */; };
-		388C14AF244E936E003323F2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AE244E936E003323F2 /* HomeViewController.swift */; };
+		388C14AF244E936E003323F2 /* SideDishProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AE244E936E003323F2 /* SideDishProductsViewController.swift */; };
 		388C14B2244E936E003323F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388C14B0244E936E003323F2 /* Main.storyboard */; };
 		388C14B4244E9370003323F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 388C14B3244E9370003323F2 /* Assets.xcassets */; };
 		388C14B7244E9370003323F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388C14B5244E9370003323F2 /* LaunchScreen.storyboard */; };
+		388C14C2244EBD53003323F2 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14C1244EBD53003323F2 /* ProductCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38103229244EE6B600113AC1 /* ProductHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHeaderCell.swift; sourceTree = "<group>"; };
+		3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductHeaderCell.xib; sourceTree = "<group>"; };
 		388C14A7244E936E003323F2 /* SideDishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388C14AA244E936E003323F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388C14AC244E936E003323F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		388C14AE244E936E003323F2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		388C14AE244E936E003323F2 /* SideDishProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDishProductsViewController.swift; sourceTree = "<group>"; };
 		388C14B1244E936E003323F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		388C14B3244E9370003323F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		388C14B6244E9370003323F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		388C14B8244E9370003323F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		388C14C1244EBD53003323F2 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3810322D244F03DC00113AC1 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				388C14C1244EBD53003323F2 /* ProductCell.swift */,
+				38103229244EE6B600113AC1 /* ProductHeaderCell.swift */,
+				3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		388C149E244E936E003323F2 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +72,40 @@
 		388C14A9244E936E003323F2 /* SideDishApp */ = {
 			isa = PBXGroup;
 			children = (
+				388C14BE244EBC94003323F2 /* ViewControllers */,
+				388C14C0244EBCCC003323F2 /* Model */,
+				388C14BF244EBCC1003323F2 /* Views */,
 				388C14AA244E936E003323F2 /* AppDelegate.swift */,
 				388C14AC244E936E003323F2 /* SceneDelegate.swift */,
-				388C14AE244E936E003323F2 /* HomeViewController.swift */,
 				388C14B0244E936E003323F2 /* Main.storyboard */,
 				388C14B3244E9370003323F2 /* Assets.xcassets */,
 				388C14B5244E9370003323F2 /* LaunchScreen.storyboard */,
 				388C14B8244E9370003323F2 /* Info.plist */,
 			);
 			path = SideDishApp;
+			sourceTree = "<group>";
+		};
+		388C14BE244EBC94003323F2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				388C14AE244E936E003323F2 /* SideDishProductsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		388C14BF244EBCC1003323F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3810322D244F03DC00113AC1 /* Product */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		388C14C0244EBCCC003323F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +168,7 @@
 			files = (
 				388C14B7244E9370003323F2 /* LaunchScreen.storyboard in Resources */,
 				388C14B4244E9370003323F2 /* Assets.xcassets in Resources */,
+				3810322C244EE6B600113AC1 /* ProductHeaderCell.xib in Resources */,
 				388C14B2244E936E003323F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +180,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				388C14AF244E936E003323F2 /* HomeViewController.swift in Sources */,
+				388C14AF244E936E003323F2 /* SideDishProductsViewController.swift in Sources */,
+				388C14C2244EBD53003323F2 /* ProductCell.swift in Sources */,
+				3810322B244EE6B600113AC1 /* ProductHeaderCell.swift in Sources */,
 				388C14AB244E936E003323F2 /* AppDelegate.swift in Sources */,
 				388C14AD244E936E003323F2 /* SceneDelegate.swift in Sources */,
 			);
