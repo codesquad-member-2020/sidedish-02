@@ -32,8 +32,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ProductHeaderCell.xibName) as? ProductHeaderCell
-        return cell
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: ProductHeaderCell.xibName) as? ProductHeaderCell
+        return headerCell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
