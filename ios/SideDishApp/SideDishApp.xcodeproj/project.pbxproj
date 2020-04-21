@@ -57,6 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				388C14BE244EBC94003323F2 /* ViewControllers */,
+				388C14C0244EBCCC003323F2 /* Model */,
+				388C14BF244EBCC1003323F2 /* Views */,
 				388C14AA244E936E003323F2 /* AppDelegate.swift */,
 				388C14AC244E936E003323F2 /* SceneDelegate.swift */,
 				388C14B0244E936E003323F2 /* Main.storyboard */,
@@ -73,6 +75,20 @@
 				388C14AE244E936E003323F2 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		388C14BF244EBCC1003323F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		388C14C0244EBCCC003323F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
