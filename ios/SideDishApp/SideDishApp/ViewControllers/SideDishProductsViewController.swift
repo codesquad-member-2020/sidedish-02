@@ -12,12 +12,19 @@ class SideDishProductsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    private let navigationTitle = "반찬 코너"
     private let rowHeight: CGFloat = 130
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
+        configureNavigationBar()
+    }
+    
+    private func configureNavigationBar() {
+        navigationItem.title = navigationTitle
+        navigationController?.navigationBar.isTranslucent = false
     }
     
     private func configureTableView() {
