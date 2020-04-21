@@ -43,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3810322D244F03DC00113AC1 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				388C14C1244EBD53003323F2 /* ProductCell.swift */,
+				38103229244EE6B600113AC1 /* ProductHeaderCell.swift */,
+				3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		388C149E244E936E003323F2 = {
 			isa = PBXGroup;
 			children = (
@@ -86,9 +96,7 @@
 		388C14BF244EBCC1003323F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				388C14C1244EBD53003323F2 /* ProductCell.swift */,
-				38103229244EE6B600113AC1 /* ProductHeaderCell.swift */,
-				3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */,
+				3810322D244F03DC00113AC1 /* Product */,
 			);
 			path = Views;
 			sourceTree = "<group>";
