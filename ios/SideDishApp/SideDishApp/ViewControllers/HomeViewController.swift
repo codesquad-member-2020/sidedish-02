@@ -17,12 +17,24 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTableView()
+    }
+    
+    private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let nib = UINib(nibName: ProductHeaderCell.xibName, bundle: Bundle.main)
+        tableView.register(nib, forCellReuseIdentifier: ProductHeaderCell.xibName)
     }
 }
 
 extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductHeaderCell.xibName) as? ProductHeaderCell
+        return cell
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -39,6 +51,10 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return ProductHeaderCell.height
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return rowHeight

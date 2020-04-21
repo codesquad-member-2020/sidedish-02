@@ -1,5 +1,5 @@
 //
-//  ProductSectionHeaderView.swift
+//  ProductHeaderView.swift
 //  SideDishApp
 //
 //  Created by Cory Kim on 2020/04/21.
@@ -8,23 +8,21 @@
 
 import UIKit
 
-class ProductSectionHeaderView: UIView {
+class ProductHeaderCell: UITableViewCell {
+
+    static let xibName = "ProductHeaderCell"
+    static let height: CGFloat = 80
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
     private let borderWidth: CGFloat = 1
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configure()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        configure()
-    }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        configure()
+    }
+
     private func configure() {
         categoryLabel.layer.borderWidth = borderWidth
         categoryLabel.layer.borderColor = UIColor(named: "subtitle-gray")?.cgColor
