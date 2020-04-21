@@ -10,7 +10,7 @@ import UIKit
 
 class NormalPriceLabel: UILabel {
 
-    private let normalPriceColor = UIColor(named: "subtitle-gray")
+    private let normalPriceColor = UIColor(named: "subtitle-gray")!
     private let fontSize: CGFloat = 14
     
     func setTitle(text: String) {

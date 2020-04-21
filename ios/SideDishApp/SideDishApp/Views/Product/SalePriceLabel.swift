@@ -10,7 +10,7 @@ import UIKit
 
 class SalePriceLabel: UILabel {
 
-    private let salePriceColor = UIColor(named: "keyColor")
+    private let salePriceColor = UIColor(named: "keyColor")!
     private let currencyUnit = "원"
     private let priceFontSize: CGFloat = 17
     private let unitFontSize: CGFloat = 15
