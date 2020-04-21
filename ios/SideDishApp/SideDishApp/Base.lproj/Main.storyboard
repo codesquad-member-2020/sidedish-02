@@ -34,13 +34,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Mta-05-CeQ">
-                                                    <rect key="frame" x="134" y="22" width="248" height="86"/>
+                                                    <rect key="frame" x="134" y="22" width="256" height="86"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-IO-zi8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="189.5" height="39.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="39.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[집밥의 완성] 삼계탕 1.2kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f3-9Q-bgE">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="189.5" height="20.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[집밥의 완성] 삼계탕 1.2kg 먹으면 기절할걸?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f3-9Q-bgE">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="256" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -111,7 +111,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="p0E-P6-VDk" secondAttribute="bottom" constant="12" id="HCy-99-Ojl"/>
                                                 <constraint firstItem="p0E-P6-VDk" firstAttribute="leading" secondItem="H3m-IS-eFb" secondAttribute="leading" constant="12" id="IME-75-wjk"/>
                                                 <constraint firstItem="Mta-05-CeQ" firstAttribute="centerY" secondItem="p0E-P6-VDk" secondAttribute="centerY" id="Jvo-dR-w4F"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Mta-05-CeQ" secondAttribute="trailing" constant="12" id="mvZ-dt-den"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Mta-05-CeQ" secondAttribute="trailing" constant="4" id="mvZ-dt-den"/>
                                                 <constraint firstItem="p0E-P6-VDk" firstAttribute="top" secondItem="H3m-IS-eFb" secondAttribute="top" constant="12" id="rDP-vf-xwV"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -128,6 +128,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ZyG-0V-986" id="DbH-eR-Hyu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,16 +139,16 @@
     </scenes>
     <resources>
         <namedColor name="badge-event">
-            <color red="0.63215053080000005" green="0.45976996419999999" blue="0.72943848369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.63200002908706665" green="0.46000000834465027" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="badge-gift">
-            <color red="0.93443304299999996" green="0.72327858209999996" blue="0.24689251179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.93400001525878906" green="0.72299998998641968" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="keyColor">
-            <color red="0.36157631870000001" green="0.74909400940000004" blue="0.73725885150000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.3619999885559082" green="0.74900001287460327" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="subtitle-gray">
-            <color red="0.74510318040000001" green="0.74508893490000005" blue="0.74509865050000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.74500000476837158" green="0.74500000476837158" blue="0.74500000476837158" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
