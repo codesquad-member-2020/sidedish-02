@@ -12,6 +12,7 @@
 		3868CC4D244F17F6008DEC81 /* PriceLabelsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */; };
 		3868CC4F244F18E3008DEC81 /* NormalPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC4E244F18E3008DEC81 /* NormalPriceLabel.swift */; };
 		3868CC52244F1E10008DEC81 /* SalePriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC51244F1E10008DEC81 /* SalePriceLabel.swift */; };
+		3868CC55244F1E89008DEC81 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC54244F1E89008DEC81 /* UIStackView+Extension.swift */; };
 		388C14AB244E936E003323F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AA244E936E003323F2 /* AppDelegate.swift */; };
 		388C14AD244E936E003323F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AC244E936E003323F2 /* SceneDelegate.swift */; };
 		388C14AF244E936E003323F2 /* SideDishProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AE244E936E003323F2 /* SideDishProductsViewController.swift */; };
@@ -27,6 +28,7 @@
 		3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabelsStackView.swift; sourceTree = "<group>"; };
 		3868CC4E244F18E3008DEC81 /* NormalPriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalPriceLabel.swift; sourceTree = "<group>"; };
 		3868CC51244F1E10008DEC81 /* SalePriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalePriceLabel.swift; sourceTree = "<group>"; };
+		3868CC54244F1E89008DEC81 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		388C14A7244E936E003323F2 /* SideDishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388C14AA244E936E003323F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388C14AC244E936E003323F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 			path = Product;
 			sourceTree = "<group>";
 		};
+		3868CC53244F1E70008DEC81 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3868CC54244F1E89008DEC81 /* UIStackView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		388C149E244E936E003323F2 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 				388C14BE244EBC94003323F2 /* ViewControllers */,
 				388C14C0244EBCCC003323F2 /* Model */,
 				388C14BF244EBCC1003323F2 /* Views */,
+				3868CC53244F1E70008DEC81 /* Extensions */,
 				388C14AA244E936E003323F2 /* AppDelegate.swift */,
 				388C14AC244E936E003323F2 /* SceneDelegate.swift */,
 				388C14B0244E936E003323F2 /* Main.storyboard */,
@@ -194,6 +205,7 @@
 				388C14C2244EBD53003323F2 /* ProductCell.swift in Sources */,
 				3810322B244EE6B600113AC1 /* ProductHeaderCell.swift in Sources */,
 				388C14AB244E936E003323F2 /* AppDelegate.swift in Sources */,
+				3868CC55244F1E89008DEC81 /* UIStackView+Extension.swift in Sources */,
 				3868CC4D244F17F6008DEC81 /* PriceLabelsStackView.swift in Sources */,
 				388C14AD244E936E003323F2 /* SceneDelegate.swift in Sources */,
 				3868CC52244F1E10008DEC81 /* SalePriceLabel.swift in Sources */,
