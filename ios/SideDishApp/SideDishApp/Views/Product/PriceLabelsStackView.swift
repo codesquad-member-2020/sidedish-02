@@ -11,6 +11,14 @@ import UIKit
 class PriceLabelsStackView: UIStackView {
 
     func configurePriceLabels(normalPrice: String?, salePrice: String) {
-        
+        self.removeAll()
+        if let normalPrice = normalPrice {
+            let normalPriceLabel = NormalPriceLabel()
+            normalPriceLabel.setTitle(text: normalPrice)
+            self.addArrangedSubview(normalPriceLabel)
+        }
+        let salePriceLabel = SalePriceLabel()
+        salePriceLabel.setTitle(text: salePrice)
+        self.addArrangedSubview(salePriceLabel)
     }
 }
