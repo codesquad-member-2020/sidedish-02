@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3810321A244EC39600113AC1 /* ProductSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38103219244EC39600113AC1 /* ProductSectionHeaderView.xib */; };
+		3810321C244EC91300113AC1 /* ProductSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3810321B244EC91300113AC1 /* ProductSectionHeaderView.swift */; };
 		388C14AB244E936E003323F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AA244E936E003323F2 /* AppDelegate.swift */; };
 		388C14AD244E936E003323F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AC244E936E003323F2 /* SceneDelegate.swift */; };
 		388C14AF244E936E003323F2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AE244E936E003323F2 /* HomeViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		38103219244EC39600113AC1 /* ProductSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSectionHeaderView.xib; sourceTree = "<group>"; };
+		3810321B244EC91300113AC1 /* ProductSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSectionHeaderView.swift; sourceTree = "<group>"; };
 		388C14A7244E936E003323F2 /* SideDishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388C14AA244E936E003323F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388C14AC244E936E003323F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				388C14C1244EBD53003323F2 /* ProductCell.swift */,
 				38103219244EC39600113AC1 /* ProductSectionHeaderView.xib */,
+				3810321B244EC91300113AC1 /* ProductSectionHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				388C14AF244E936E003323F2 /* HomeViewController.swift in Sources */,
+				3810321C244EC91300113AC1 /* ProductSectionHeaderView.swift in Sources */,
 				388C14C2244EBD53003323F2 /* ProductCell.swift in Sources */,
 				388C14AB244E936E003323F2 /* AppDelegate.swift in Sources */,
 				388C14AD244E936E003323F2 /* SceneDelegate.swift in Sources */,
