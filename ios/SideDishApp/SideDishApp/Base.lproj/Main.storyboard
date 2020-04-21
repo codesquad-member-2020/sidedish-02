@@ -56,20 +56,17 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="GSQ-g8-25P">
                                                             <rect key="frame" x="0.0" y="46.5" width="137" height="39.5"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wNs-fe-cAc" customClass="PriceLabelsStackView" customModule="SideDishApp" customModuleProvider="target">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wNs-fe-cAc" customClass="PriceLabelsStackView" customModule="SideDishApp" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="137" height="20.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-Ku-cbA">
-                                                                            <rect key="frame" x="0.0" y="2" width="70.5" height="17"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="70.5" id="FIv-bn-QRs"/>
-                                                                            </constraints>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="9500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-Ku-cbA">
+                                                                            <rect key="frame" x="0.0" y="2" width="48" height="17"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                             <color key="textColor" name="subtitle-gray"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8,500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4c-Jj-LBC">
-                                                                            <rect key="frame" x="70.5" y="0.0" width="66.5" height="20.5"/>
+                                                                            <rect key="frame" x="52" y="0.0" width="85" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                                             <color key="textColor" name="keyColor"/>
                                                                             <nil key="highlightedColor"/>

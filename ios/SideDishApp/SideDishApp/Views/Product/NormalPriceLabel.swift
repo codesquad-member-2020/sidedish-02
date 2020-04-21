@@ -21,5 +21,6 @@ class NormalPriceLabel: UILabel {
                                                 .strikethroughStyle: NSUnderlineStyle.single.rawValue,
                                                 .strikethroughColor: normalPriceColor,
                                             ])
+        self.setContentHuggingPriority(.defaultHigh, for: .horizontal)
     }
 }
