@@ -56,15 +56,23 @@
 		388C14A9244E936E003323F2 /* SideDishApp */ = {
 			isa = PBXGroup;
 			children = (
+				388C14BE244EBC94003323F2 /* ViewControllers */,
 				388C14AA244E936E003323F2 /* AppDelegate.swift */,
 				388C14AC244E936E003323F2 /* SceneDelegate.swift */,
-				388C14AE244E936E003323F2 /* HomeViewController.swift */,
 				388C14B0244E936E003323F2 /* Main.storyboard */,
 				388C14B3244E9370003323F2 /* Assets.xcassets */,
 				388C14B5244E9370003323F2 /* LaunchScreen.storyboard */,
 				388C14B8244E9370003323F2 /* Info.plist */,
 			);
 			path = SideDishApp;
+			sourceTree = "<group>";
+		};
+		388C14BE244EBC94003323F2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				388C14AE244E936E003323F2 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
