@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZyG-0V-986">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="product" rowHeight="130" id="pvt-CM-9GU" customClass="ProductCell" customModule="SideDishApp" customModuleProvider="target">
@@ -121,12 +120,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZyG-0V-986" secondAttribute="bottom" id="Nfs-yu-9Pw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZyG-0V-986" secondAttribute="trailing" id="Olc-sG-e3a"/>
-                            <constraint firstItem="ZyG-0V-986" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jOl-ll-2pI"/>
-                            <constraint firstItem="ZyG-0V-986" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wdC-Ek-Ub6"/>
+                            <constraint firstAttribute="bottom" secondItem="ZyG-0V-986" secondAttribute="bottom" id="Nfs-yu-9Pw"/>
+                            <constraint firstAttribute="trailing" secondItem="ZyG-0V-986" secondAttribute="trailing" id="Olc-sG-e3a"/>
+                            <constraint firstItem="ZyG-0V-986" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jOl-ll-2pI"/>
+                            <constraint firstItem="ZyG-0V-986" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wdC-Ek-Ub6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="ZyG-0V-986" id="DbH-eR-Hyu"/>
