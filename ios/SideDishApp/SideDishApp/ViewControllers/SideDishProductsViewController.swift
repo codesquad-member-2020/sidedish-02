@@ -13,7 +13,6 @@ class SideDishProductsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let navigationTitle = "반찬 코너"
-    private let rowHeight: CGFloat = 130
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +63,6 @@ extension SideDishProductsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return rowHeight
+        return ProductCell.height
     }
 }
