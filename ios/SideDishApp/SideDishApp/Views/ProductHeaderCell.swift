@@ -22,6 +22,11 @@ class ProductHeaderCell: UITableViewCell {
         super.awakeFromNib()
         configure()
     }
+    
+    func configureHeaderWith(category: String, title: String) {
+        self.categoryLabel.text = category
+        self.titleLabel.text = title
+    }
 
     private func configure() {
         categoryLabel.layer.borderWidth = borderWidth
