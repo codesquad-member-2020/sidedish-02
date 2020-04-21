@@ -11,12 +11,23 @@ import UIKit
 class SalePriceLabel: UILabel {
 
     private let salePriceColor = UIColor(named: "keyColor")
-    private let fontSize: CGFloat = 17
+    private let currencyUnit = "원"
+    private let priceFontSize: CGFloat = 17
+    private let unitFontSize: CGFloat = 15
     
-    override var text: String? {
-        didSet {
-            self.textColor = salePriceColor
-            self.font = .systemFont(ofSize: fontSize, weight: .heavy)
-        }
+    func setTitle(text: String) {
+        let price = text.components(separatedBy: currencyUnit).first ?? text
+        
+        let attributedText = NSMutableAttributedString(string: price.priceFormat,
+                                            attributes: [
+                                                .foregroundColor: salePriceColor,
+                                                .font: UIFont.systemFont(ofSize: priceFontSize, weight: .heavy)
+                                            ])
+        attributedText.append(NSAttributedString(string: currencyUnit,
+                                                 attributes: [
+                                                     .foregroundColor: salePriceColor,
+                                                     .font: UIFont.systemFont(ofSize: unitFontSize, weight: .medium)
+                                                 ]))
+        self.attributedText = attributedText
     }
 }
