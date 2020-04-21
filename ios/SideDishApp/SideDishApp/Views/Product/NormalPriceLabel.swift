@@ -14,7 +14,7 @@ class NormalPriceLabel: UILabel {
     private let fontSize: CGFloat = 14
     
     func setTitle(text: String) {
-        attributedText = NSAttributedString(string: text,
+        attributedText = NSAttributedString(string: text.priceFormat,
                                             attributes: [
                                                 .foregroundColor: normalPriceColor,
                                                 .font: UIFont.systemFont(ofSize: fontSize),
