@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -114,6 +115,13 @@
                                                 <constraint firstItem="p0E-P6-VDk" firstAttribute="top" secondItem="H3m-IS-eFb" secondAttribute="top" constant="12" id="rDP-vf-xwV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="badgeStackView" destination="sUt-CG-kJr" id="5ey-DF-Iw3"/>
+                                            <outlet property="descriptionLabel" destination="mEx-wd-TFn" id="FDv-DO-rDU"/>
+                                            <outlet property="priceStackView" destination="wNs-fe-cAc" id="C3z-SF-YyG"/>
+                                            <outlet property="productImageView" destination="p0E-P6-VDk" id="nbU-Zk-FcI"/>
+                                            <outlet property="titleLabel" destination="3f3-9Q-bgE" id="aua-H2-No8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -125,6 +133,7 @@
                             <constraint firstItem="ZyG-0V-986" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jOl-ll-2pI"/>
                             <constraint firstItem="ZyG-0V-986" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wdC-Ek-Ub6"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="85A-X8-0p7"/>
                     </view>
                     <navigationItem key="navigationItem" id="lLK-Rc-TJD"/>
                     <connections>

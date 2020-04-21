@@ -11,8 +11,21 @@ import UIKit
 class ProductCell: UITableViewCell {
 
     static let identifier = "product"
+
+    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var priceStackView: UIStackView!
+    @IBOutlet weak var badgeStackView: UIStackView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        configureImageView()
+    }
+    
+    private func configureImageView() {
+        productImageView.backgroundColor = UIColor(named: "keyColor")
+        productImageView.layer.cornerRadius = productImageView.frame.height / 2
     }
 }
