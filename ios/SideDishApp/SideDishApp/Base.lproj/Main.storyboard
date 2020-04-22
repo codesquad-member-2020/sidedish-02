@@ -73,7 +73,7 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sUt-CG-kJr">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sUt-CG-kJr" customClass="BadgesStackView" customModule="SideDishApp" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="23.5" width="137" height="16"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이벤트특가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SG-Di-6sS">
@@ -113,7 +113,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="badgeStackView" destination="sUt-CG-kJr" id="5ey-DF-Iw3"/>
+                                            <outlet property="badgesStackView" destination="sUt-CG-kJr" id="5ey-DF-Iw3"/>
                                             <outlet property="descriptionLabel" destination="mEx-wd-TFn" id="FDv-DO-rDU"/>
                                             <outlet property="priceStackView" destination="wNs-fe-cAc" id="C3z-SF-YyG"/>
                                             <outlet property="productImageView" destination="p0E-P6-VDk" id="nbU-Zk-FcI"/>

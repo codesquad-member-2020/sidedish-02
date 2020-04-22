@@ -16,6 +16,7 @@
 		3868CC57244F2A63008DEC81 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC56244F2A63008DEC81 /* String+Extension.swift */; };
 		3868CC5D24501A17008DEC81 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC5C24501A17008DEC81 /* PaddingLabel.swift */; };
 		3868CC5F24501BAF008DEC81 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC5E24501BAF008DEC81 /* BadgeLabel.swift */; };
+		3868CC61245039F6008DEC81 /* BadgesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC60245039F6008DEC81 /* BadgesStackView.swift */; };
 		388C14AB244E936E003323F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AA244E936E003323F2 /* AppDelegate.swift */; };
 		388C14AD244E936E003323F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AC244E936E003323F2 /* SceneDelegate.swift */; };
 		388C14AF244E936E003323F2 /* SideDishProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388C14AE244E936E003323F2 /* SideDishProductsViewController.swift */; };
@@ -35,6 +36,7 @@
 		3868CC56244F2A63008DEC81 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3868CC5C24501A17008DEC81 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		3868CC5E24501BAF008DEC81 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
+		3868CC60245039F6008DEC81 /* BadgesStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesStackView.swift; sourceTree = "<group>"; };
 		388C14A7244E936E003323F2 /* SideDishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388C14AA244E936E003323F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388C14AC244E936E003323F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				3868CC51244F1E10008DEC81 /* SalePriceLabel.swift */,
 				3868CC5C24501A17008DEC81 /* PaddingLabel.swift */,
 				3868CC5E24501BAF008DEC81 /* BadgeLabel.swift */,
+				3868CC60245039F6008DEC81 /* BadgesStackView.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				3810322B244EE6B600113AC1 /* ProductHeaderCell.swift in Sources */,
 				388C14AB244E936E003323F2 /* AppDelegate.swift in Sources */,
 				3868CC55244F1E89008DEC81 /* UIStackView+Extension.swift in Sources */,
+				3868CC61245039F6008DEC81 /* BadgesStackView.swift in Sources */,
 				3868CC5F24501BAF008DEC81 /* BadgeLabel.swift in Sources */,
 				3868CC4D244F17F6008DEC81 /* PriceLabelsStackView.swift in Sources */,
 				388C14AD244E936E003323F2 /* SceneDelegate.swift in Sources */,

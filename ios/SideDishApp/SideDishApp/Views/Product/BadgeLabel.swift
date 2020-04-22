@@ -39,4 +39,11 @@ class BadgeLabel: PaddingLabel {
         self.font = .systemFont(ofSize: fontSize, weight: .regular)
         self.backgroundColor = BadgeType(rawValue: text)?.color
     }
+    
+    func setEmpty() {
+        self.text = "empty"
+        self.textColor = .clear
+        self.backgroundColor = .clear
+        self.font = .systemFont(ofSize: fontSize, weight: .regular)
+    }
 }
