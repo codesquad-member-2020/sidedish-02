@@ -14,7 +14,7 @@ class ProductHeaderCell: UITableViewCell {
     static let height: CGFloat = 80
     
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: CategoryLabel!
     
     private let borderWidth: CGFloat = 1
     
