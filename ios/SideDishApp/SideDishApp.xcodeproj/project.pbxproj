@@ -11,7 +11,7 @@
 		3810322C244EE6B600113AC1 /* ProductHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */; };
 		3868CC4D244F17F6008DEC81 /* PriceLabelsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */; };
 		3868CC4F244F18E3008DEC81 /* OriginalPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC4E244F18E3008DEC81 /* OriginalPriceLabel.swift */; };
-		3868CC52244F1E10008DEC81 /* SalePriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC51244F1E10008DEC81 /* SalePriceLabel.swift */; };
+		3868CC52244F1E10008DEC81 /* FinalPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC51244F1E10008DEC81 /* FinalPriceLabel.swift */; };
 		3868CC55244F1E89008DEC81 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC54244F1E89008DEC81 /* UIStackView+Extension.swift */; };
 		3868CC57244F2A63008DEC81 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC56244F2A63008DEC81 /* String+Extension.swift */; };
 		3868CC5D24501A17008DEC81 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC5C24501A17008DEC81 /* PaddingLabel.swift */; };
@@ -32,7 +32,7 @@
 		3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductHeaderCell.xib; sourceTree = "<group>"; };
 		3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabelsStackView.swift; sourceTree = "<group>"; };
 		3868CC4E244F18E3008DEC81 /* OriginalPriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalPriceLabel.swift; sourceTree = "<group>"; };
-		3868CC51244F1E10008DEC81 /* SalePriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalePriceLabel.swift; sourceTree = "<group>"; };
+		3868CC51244F1E10008DEC81 /* FinalPriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPriceLabel.swift; sourceTree = "<group>"; };
 		3868CC54244F1E89008DEC81 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		3868CC56244F2A63008DEC81 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3868CC5C24501A17008DEC81 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			children = (
 				3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */,
 				3868CC4E244F18E3008DEC81 /* OriginalPriceLabel.swift */,
-				3868CC51244F1E10008DEC81 /* SalePriceLabel.swift */,
+				3868CC51244F1E10008DEC81 /* FinalPriceLabel.swift */,
 			);
 			path = Price;
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 				388C14AD244E936E003323F2 /* SceneDelegate.swift in Sources */,
 				3868CC57244F2A63008DEC81 /* String+Extension.swift in Sources */,
 				3868CC5D24501A17008DEC81 /* PaddingLabel.swift in Sources */,
-				3868CC52244F1E10008DEC81 /* SalePriceLabel.swift in Sources */,
+				3868CC52244F1E10008DEC81 /* FinalPriceLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

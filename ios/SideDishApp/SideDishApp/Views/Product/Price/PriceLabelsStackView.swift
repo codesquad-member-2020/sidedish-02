@@ -10,15 +10,15 @@ import UIKit
 
 class PriceLabelsStackView: UIStackView {
 
-    func configurePriceLabels(originalPrice: String?, salePrice: String) {
+    func configurePriceLabels(originalPrice: String?, finalPrice: String) {
         self.removeAll()
         if let originalPrice = originalPrice {
             let originalPriceLabel = OriginalPriceLabel()
             originalPriceLabel.setTitle(text: originalPrice)
             self.addArrangedSubview(originalPriceLabel)
         }
-        let salePriceLabel = SalePriceLabel()
-        salePriceLabel.setTitle(text: salePrice)
-        self.addArrangedSubview(salePriceLabel)
+        let finalPriceLabel = FinalPriceLabel()
+        finalPriceLabel.setTitle(text: finalPrice)
+        self.addArrangedSubview(finalPriceLabel)
     }
 }
