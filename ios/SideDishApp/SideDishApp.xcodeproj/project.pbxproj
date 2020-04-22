@@ -64,15 +64,12 @@
 		3810322D244F03DC00113AC1 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				3868CC6524509EAE008DEC81 /* Price */,
+				3868CC6424509E99008DEC81 /* Badge */,
 				388C14C1244EBD53003323F2 /* ProductCell.swift */,
 				38103229244EE6B600113AC1 /* ProductHeaderCell.swift */,
 				3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */,
-				3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */,
-				3868CC4E244F18E3008DEC81 /* NormalPriceLabel.swift */,
-				3868CC51244F1E10008DEC81 /* SalePriceLabel.swift */,
 				3868CC5C24501A17008DEC81 /* PaddingLabel.swift */,
-				3868CC5E24501BAF008DEC81 /* BadgeLabel.swift */,
-				3868CC60245039F6008DEC81 /* BadgesStackView.swift */,
 				3868CC622450656E008DEC81 /* CategoryLabel.swift */,
 			);
 			path = Product;
@@ -85,6 +82,25 @@
 				3868CC56244F2A63008DEC81 /* String+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3868CC6424509E99008DEC81 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				3868CC60245039F6008DEC81 /* BadgesStackView.swift */,
+				3868CC5E24501BAF008DEC81 /* BadgeLabel.swift */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
+		3868CC6524509EAE008DEC81 /* Price */ = {
+			isa = PBXGroup;
+			children = (
+				3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */,
+				3868CC4E244F18E3008DEC81 /* NormalPriceLabel.swift */,
+				3868CC51244F1E10008DEC81 /* SalePriceLabel.swift */,
+			);
+			path = Price;
 			sourceTree = "<group>";
 		};
 		388C149E244E936E003323F2 = {
