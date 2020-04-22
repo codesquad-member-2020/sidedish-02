@@ -17,7 +17,7 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceStackView: PriceLabelsStackView!
-    @IBOutlet weak var badgesStackView: BadgesStackView!
+    @IBOutlet weak var badgeLabelsStackView: BadgeLabelsStackView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
