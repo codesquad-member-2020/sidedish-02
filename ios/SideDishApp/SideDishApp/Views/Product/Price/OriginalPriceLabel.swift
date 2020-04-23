@@ -8,18 +8,18 @@
 
 import UIKit
 
-class NormalPriceLabel: UILabel {
+class OriginalPriceLabel: UILabel {
 
-    private let normalPriceColor = UIColor(named: "subtitle-gray")!
+    private let labelColor = UIColor(named: "subtitle-gray")!
     private let fontSize: CGFloat = 14
     
     func setTitle(text: String) {
         attributedText = NSAttributedString(string: text.priceFormat,
                                             attributes: [
-                                                .foregroundColor: normalPriceColor,
+                                                .foregroundColor: labelColor,
                                                 .font: UIFont.systemFont(ofSize: fontSize),
                                                 .strikethroughStyle: NSUnderlineStyle.single.rawValue,
-                                                .strikethroughColor: normalPriceColor,
+                                                .strikethroughColor: labelColor,
                                             ])
         self.setContentHuggingPriority(.defaultHigh, for: .horizontal)
     }

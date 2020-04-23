@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BadgesStackView: UIStackView {
+class BadgeLabelsStackView: UIStackView {
     
     func configureBadges(_ badges: [String]?) {
         self.removeAll()

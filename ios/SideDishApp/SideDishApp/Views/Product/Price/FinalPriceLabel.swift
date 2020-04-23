@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SalePriceLabel: UILabel {
+class FinalPriceLabel: UILabel {
 
     private let salePriceColor = UIColor(named: "keyColor")!
     private let currencyUnit = "원"
