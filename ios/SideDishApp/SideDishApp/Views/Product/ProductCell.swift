@@ -11,7 +11,6 @@ import UIKit
 class ProductCell: UITableViewCell {
 
     static let identifier = "product"
-    static let height: CGFloat = 130
 
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
