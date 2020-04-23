@@ -17,6 +17,21 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureNavigationBar()
         orderButton.layer.cornerRadius = 8
+    }
+    
+    // MARK:- NavigationBar Configuration
+    
+    private func configureNavigationBar() {
+        let backButtonImage = UIImage(named: "back.button")
+        let backButtonItem = UIBarButtonItem.init(image: backButtonImage, style: .plain, target: self, action: #selector(handleBack))
+        backButtonItem.tintColor = .black
+        self.navigationItem.setLeftBarButton(backButtonItem, animated: false)
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+    }
+    
+    @objc private func handleBack() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
