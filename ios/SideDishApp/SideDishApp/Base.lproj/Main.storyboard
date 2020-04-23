@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y5r-Gt-MUv">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -12,34 +13,37 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SideDishProductsViewController" customModule="SideDishApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZyG-0V-986">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="product" rowHeight="130" id="pvt-CM-9GU" customClass="ProductCell" customModule="SideDishApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="130"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="product" id="pvt-CM-9GU" customClass="ProductCell" customModule="SideDishApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pvt-CM-9GU" id="H3m-IS-eFb">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p0E-P6-VDk">
-                                                    <rect key="frame" x="12" y="12" width="106" height="106"/>
+                                                    <rect key="frame" x="16" y="12" width="96.5" height="96.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="p0E-P6-VDk" secondAttribute="height" multiplier="1:1" id="rjP-IT-SdN"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Mta-05-CeQ">
-                                                    <rect key="frame" x="134" y="22" width="447" height="86"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" axis="vertical" distribution="fillProportionally" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Mta-05-CeQ">
+                                                    <rect key="frame" x="128.5" y="17" width="261.5" height="86"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-IO-zi8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="309.5" height="39.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="261.5" height="39.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[집밥의 완성] 삼계탕 1.2kg 먹으면 기절할걸?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f3-9Q-bgE">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="309.5" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="261.5" height="20.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20.5" id="V7N-Oi-gia"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -58,13 +62,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wNs-fe-cAc" customClass="PriceLabelsStackView" customModule="SideDishApp" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="118.5" height="20.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="9500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-Ku-cbA">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" ambiguous="YES" text="9500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-Ku-cbA">
                                                                             <rect key="frame" x="0.0" y="2" width="48" height="17"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                             <color key="textColor" name="subtitle-gray"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8,500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4c-Jj-LBC">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="8,500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4c-Jj-LBC">
                                                                             <rect key="frame" x="52" y="0.0" width="66.5" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                                             <color key="textColor" name="keyColor"/>
@@ -103,12 +107,14 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="p0E-P6-VDk" firstAttribute="height" secondItem="H3m-IS-eFb" secondAttribute="height" multiplier="0.8" id="6fn-jl-5da"/>
                                                 <constraint firstItem="Mta-05-CeQ" firstAttribute="leading" secondItem="p0E-P6-VDk" secondAttribute="trailing" constant="16" id="Dmw-xN-wDV"/>
-                                                <constraint firstAttribute="bottom" secondItem="p0E-P6-VDk" secondAttribute="bottom" constant="12" id="HCy-99-Ojl"/>
-                                                <constraint firstItem="p0E-P6-VDk" firstAttribute="leading" secondItem="H3m-IS-eFb" secondAttribute="leading" constant="12" id="IME-75-wjk"/>
-                                                <constraint firstItem="Mta-05-CeQ" firstAttribute="centerY" secondItem="p0E-P6-VDk" secondAttribute="centerY" id="Jvo-dR-w4F"/>
+                                                <constraint firstItem="p0E-P6-VDk" firstAttribute="centerY" secondItem="H3m-IS-eFb" secondAttribute="centerY" id="RCe-GJ-NnL"/>
+                                                <constraint firstItem="Mta-05-CeQ" firstAttribute="centerY" secondItem="p0E-P6-VDk" secondAttribute="centerY" id="aso-b9-GPX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Mta-05-CeQ" secondAttribute="trailing" constant="4" id="mvZ-dt-den"/>
-                                                <constraint firstItem="p0E-P6-VDk" firstAttribute="top" secondItem="H3m-IS-eFb" secondAttribute="top" constant="12" id="rDP-vf-xwV"/>
+                                                <constraint firstItem="p0E-P6-VDk" firstAttribute="leading" secondItem="H3m-IS-eFb" secondAttribute="leading" constant="16" id="thI-uL-xGt"/>
+                                                <constraint firstItem="p0E-P6-VDk" firstAttribute="top" secondItem="H3m-IS-eFb" secondAttribute="top" constant="12" id="tq7-Mo-gFt"/>
+                                                <constraint firstAttribute="bottom" secondItem="p0E-P6-VDk" secondAttribute="bottom" constant="12" id="upH-rk-ov2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
