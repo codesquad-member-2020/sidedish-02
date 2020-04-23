@@ -52,6 +52,8 @@ extension SideDishProductsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
+        cell.priceLabelsStackView.configurePriceLabels(originalPrice: "8,000", finalPrice: "6,900원")
+        cell.badgeLabelsStackView.configureBadges(["이벤트특가", "론칭특가"])
         return cell
     }
 }
@@ -60,5 +62,10 @@ extension SideDishProductsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return ProductHeaderCell.height
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailViewController = storyboard?.instantiateViewController(identifier: DetailViewController.identifier)
+        navigationController?.pushViewController(detailViewController!, animated: true)
     }
 }
