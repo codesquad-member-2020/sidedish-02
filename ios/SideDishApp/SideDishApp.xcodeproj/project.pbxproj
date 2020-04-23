@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3810322B244EE6B600113AC1 /* ProductHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38103229244EE6B600113AC1 /* ProductHeaderCell.swift */; };
 		3810322C244EE6B600113AC1 /* ProductHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */; };
+		381D92FA245174C30067C07A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D92F9245174C30067C07A /* DetailViewController.swift */; };
 		3868CC4D244F17F6008DEC81 /* PriceLabelsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */; };
 		3868CC4F244F18E3008DEC81 /* OriginalPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC4E244F18E3008DEC81 /* OriginalPriceLabel.swift */; };
 		3868CC52244F1E10008DEC81 /* FinalPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC51244F1E10008DEC81 /* FinalPriceLabel.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		38103229244EE6B600113AC1 /* ProductHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHeaderCell.swift; sourceTree = "<group>"; };
 		3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductHeaderCell.xib; sourceTree = "<group>"; };
+		381D92F9245174C30067C07A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabelsStackView.swift; sourceTree = "<group>"; };
 		3868CC4E244F18E3008DEC81 /* OriginalPriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalPriceLabel.swift; sourceTree = "<group>"; };
 		3868CC51244F1E10008DEC81 /* FinalPriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPriceLabel.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				388C14AE244E936E003323F2 /* SideDishProductsViewController.swift */,
+				381D92F9245174C30067C07A /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				3868CC4D244F17F6008DEC81 /* PriceLabelsStackView.swift in Sources */,
 				388C14AD244E936E003323F2 /* SceneDelegate.swift in Sources */,
 				3868CC57244F2A63008DEC81 /* String+Extension.swift in Sources */,
+				381D92FA245174C30067C07A /* DetailViewController.swift in Sources */,
 				3868CC5D24501A17008DEC81 /* PaddingLabel.swift in Sources */,
 				3868CC52244F1E10008DEC81 /* FinalPriceLabel.swift in Sources */,
 			);
