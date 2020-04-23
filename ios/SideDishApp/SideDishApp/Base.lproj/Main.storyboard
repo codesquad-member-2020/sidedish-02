@@ -331,7 +331,7 @@
                                 <rect key="frame" x="0.0" y="806" width="414" height="90"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvg-Kv-0Ai">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvg-Kv-0Ai" customClass="OrderButton" customModule="SideDishApp" customModuleProvider="target">
                                 <rect key="frame" x="8" y="802" width="398" height="52"/>
                                 <color key="backgroundColor" name="keyColor"/>
                                 <constraints>
@@ -341,6 +341,11 @@
                                 <state key="normal" title="주문하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -362,7 +367,6 @@
                     </view>
                     <connections>
                         <outlet property="gradientLayerContainerView" destination="tsz-gD-jVY" id="Nt1-Gg-aNy"/>
-                        <outlet property="orderButton" destination="uvg-Kv-0Ai" id="OZb-6w-J9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hx4-Kq-Sfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

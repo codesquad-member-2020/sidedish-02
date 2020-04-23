@@ -13,14 +13,12 @@ class DetailViewController: UIViewController {
     static let identifier = "DetailViewController"
     
     @IBOutlet weak var gradientLayerContainerView: UIView!
-    @IBOutlet weak var orderButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureNavigationBar()
         configureGradientBackgroundView()
-        orderButton.layer.cornerRadius = 8
     }
     
     private func configureGradientBackgroundView() {
