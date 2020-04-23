@@ -52,6 +52,8 @@ extension SideDishProductsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
+        cell.priceLabelsStackView.configurePriceLabels(originalPrice: "8,000", finalPrice: "6,900원")
+        cell.badgeLabelsStackView.configureBadges(["이벤트특가", "론칭특가"])
         return cell
     }
 }
