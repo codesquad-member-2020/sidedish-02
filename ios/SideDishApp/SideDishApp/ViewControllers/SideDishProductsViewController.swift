@@ -35,10 +35,18 @@ class SideDishProductsViewController: UIViewController {
     }
 }
 
+extension SideDishProductsViewController: ProductHeaderCellDelegate {
+    func didTapProductHeaderCell(at section: Int) {
+        // get data using section
+    }
+}
+
 extension SideDishProductsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: ProductHeaderCell.xibName) as? ProductHeaderCell
+        headerCell?.delegate = self
+        headerCell?.configureSection(section)
         return headerCell
     }
     
