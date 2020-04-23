@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ProductHeaderCellDelegate {
+    func didTapProductHeaderCell(at section: Int)
+}
+
 class ProductHeaderCell: UITableViewCell {
 
     static let xibName = "ProductHeaderCell"
@@ -15,17 +19,39 @@ class ProductHeaderCell: UITableViewCell {
     
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var titleLabel: CategoryLabel!
+    private var tapGestureRecognizer: UITapGestureRecognizer!
     
     private let borderWidth: CGFloat = 1
+    
+    private var section: Int!
+    var delegate: ProductHeaderCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         configure()
+        configureTapRecognizer()
+    }
+    
+    private func configureTapRecognizer() {
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapHeader))
+        self.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc private func handleTapHeader() {
+        delegate?.didTapProductHeaderCell(at: section)
+    }
+    
+    deinit {
+        self.removeGestureRecognizer(tapGestureRecognizer)
     }
     
     func configureHeaderWith(category: String, title: String) {
         self.categoryLabel.text = category
         self.titleLabel.text = title
+    }
+    
+    func configureSection(_ section: Int) {
+        self.section = section
     }
 
     private func configure() {
