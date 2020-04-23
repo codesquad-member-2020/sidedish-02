@@ -61,4 +61,9 @@ extension SideDishProductsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return ProductHeaderCell.height
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailViewController = storyboard?.instantiateViewController(identifier: DetailViewController.identifier)
+        navigationController?.pushViewController(detailViewController!, animated: true)
+    }
 }
