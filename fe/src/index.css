@@ -85,10 +85,17 @@ code {
 }
 
 
+<<<<<<< HEAD
 .dish-wrap {
   margin-top: 30px;
   width: 1000px;
   margin: 0 auto;
+=======
+
+
+.dish-wrap {
+  margin-top: 30px;
+>>>>>>> feat: 메인 페이지 렌더링
 }
 
 .dish-wrap section{
@@ -117,6 +124,7 @@ code {
 .item_slide-wrap button {
   font-size: xx-large;
   color: #BEBEBE;
+<<<<<<< HEAD
 }
 
 .item_slide-wrap button:before {
@@ -127,11 +135,23 @@ code {
 .item-wrap {
   width: -webkit-fill-available;
   display: flex;
+=======
+  margin: 20px;
+}
+
+ul {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+>>>>>>> feat: 메인 페이지 렌더링
 }
 
 .item {
   width: 180px;
+<<<<<<< HEAD
   min-height: 290px;
+=======
+>>>>>>> feat: 메인 페이지 렌더링
   margin: 0 20px;
 }
 
