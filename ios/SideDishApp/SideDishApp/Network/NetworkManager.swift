@@ -43,6 +43,18 @@ struct ProductList: Decodable {
     }
 }
 
+struct Products {
+    let products: [Product]
+    
+    var count: Int {
+        get { products.count }
+    }
+    
+    init(_ products: [Product] = []) {
+        self.products = products
+    }
+}
+
 struct Product: Decodable {
     let detailHash: String
     let imageURL: String

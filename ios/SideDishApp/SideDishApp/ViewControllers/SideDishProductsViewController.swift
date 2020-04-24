@@ -20,7 +20,7 @@ class SideDishProductsViewController: UIViewController {
         Category(name: "밑반찬", description: "언제 먹어도 든든한 밑반찬", path: "side")
     ]
     
-    lazy var productsList = Array<[Product]>.init(repeating: [], count: categories.count)
+    lazy var productsList = Array<Products>.init(repeating: Products(), count: categories.count)
     
     let networkManager = NetworkManager()
     
@@ -38,7 +38,7 @@ class SideDishProductsViewController: UIViewController {
                 
                 if let productList = productList {
                     DispatchQueue.main.async {
-                        self.productsList[index] = productList.products
+                        self.productsList[index] = Products(productList.products)
                         self.reloadSection(at: index)
                     }
                 }
