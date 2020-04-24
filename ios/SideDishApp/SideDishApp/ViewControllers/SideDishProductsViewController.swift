@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toaster
 
 class SideDishProductsViewController: UIViewController {
 
@@ -73,7 +74,10 @@ class SideDishProductsViewController: UIViewController {
 
 extension SideDishProductsViewController: ProductHeaderCellDelegate {
     func didTapProductHeaderCell(at section: Int) {
-        // get data using section
+        let category = categories[section]
+        let products = productsList[section]
+        
+        Toast(text: "\(category.name), 총 \(products.count)개 상품이 있습니다.", delay: 0, duration: 2).show()
     }
 }
 
@@ -81,8 +85,10 @@ extension SideDishProductsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: ProductHeaderCell.xibName) as? ProductHeaderCell
+        let category = categories[section]
         headerCell?.delegate = self
         headerCell?.configureSection(section)
+        headerCell?.configureHeaderWith(category: category.name, title: category.description)
         return headerCell
     }
     
@@ -96,8 +102,18 @@ extension SideDishProductsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
-        cell.priceLabelsStackView.configurePriceLabels(originalPrice: "8,000", finalPrice: "6,900원")
-        cell.badgeLabelsStackView.configureBadges(["이벤트특가", "론칭특가"])
+        let products = productsList[indexPath.section]
+        let product = products.product(at: indexPath.row)
+        
+        networkManager.fetchImage(from: product.imageURL) { (data) in
+            guard let data = data else { return }
+            let image = UIImage(data: data)
+            DispatchQueue.main.async {
+                cell.configureProductImage(image)
+            }
+        }
+        cell.configureDetailHash(product.detailHash)
+        cell.configureProductCell(with: product)
         return cell
     }
 }
