@@ -18,10 +18,16 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var priceLabelsStackView: PriceLabelsStackView!
     @IBOutlet weak var badgeLabelsStackView: BadgeLabelsStackView!
     
+    private var detailHash: String!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         configureImageView()
+    }
+    
+    func configureDetailHash(_ detailHash: String) {
+        self.detailHash = detailHash
     }
     
     func configureProductImage(_ image: UIImage?) {

@@ -112,6 +112,7 @@ extension SideDishProductsViewController: UITableViewDataSource {
                 cell.configureProductImage(image)
             }
         }
+        cell.configureDetailHash(product.detailHash)
         cell.configureProductCell(with: product)
         return cell
     }
