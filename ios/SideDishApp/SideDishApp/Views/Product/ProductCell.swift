@@ -24,6 +24,13 @@ class ProductCell: UITableViewCell {
         configureImageView()
     }
     
+    func configureProductCell(with product: Product) {
+        titleLabel.text = product.title
+        descriptionLabel.text = product.description
+        badgeLabelsStackView.configureBadges(product.badges)
+        priceLabelsStackView.configurePriceLabels(originalPrice: product.originalPrice, finalPrice: product.finalPrice)
+    }
+    
     private func configureImageView() {
         productImageView.backgroundColor = UIColor(named: "keyColor")
         productImageView.layer.cornerRadius = productImageView.frame.height / 2
