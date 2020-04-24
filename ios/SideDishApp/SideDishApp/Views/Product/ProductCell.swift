@@ -27,7 +27,11 @@ class ProductCell: UITableViewCell {
     func configureProductCell(with product: Product) {
         titleLabel.text = product.title
         descriptionLabel.text = product.description
-        badgeLabelsStackView.configureBadges(product.badges)
+        if product.badges?.count == 0 {
+            badgeLabelsStackView.configureBadges(nil)
+        } else {
+            badgeLabelsStackView.configureBadges(product.badges)
+        }
         priceLabelsStackView.configurePriceLabels(originalPrice: product.originalPrice, finalPrice: product.finalPrice)
     }
     
