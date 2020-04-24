@@ -12,6 +12,7 @@ struct Product: Decodable {
     let detailHash: String
     let imageURL: String
     let title: String
+    let description: String
     let originalPrice: String?
     let finalPrice: String
     let badges: [String]?
@@ -19,7 +20,7 @@ struct Product: Decodable {
     enum CodingKeys: String, CodingKey {
         case detailHash = "detail_hash"
         case imageURL = "image"
-        case title
+        case title, description
         case originalPrice = "n_price"
         case finalPrice = "s_price"
         case badges = "badge"
