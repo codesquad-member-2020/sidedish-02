@@ -81,8 +81,10 @@ extension SideDishProductsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: ProductHeaderCell.xibName) as? ProductHeaderCell
+        let category = categories[section]
         headerCell?.delegate = self
         headerCell?.configureSection(section)
+        headerCell?.configureHeaderWith(category: category.name, title: category.description)
         return headerCell
     }
     
