@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		3810322B244EE6B600113AC1 /* ProductHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38103229244EE6B600113AC1 /* ProductHeaderCell.swift */; };
 		3810322C244EE6B600113AC1 /* ProductHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */; };
 		381D92FA245174C30067C07A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D92F9245174C30067C07A /* DetailViewController.swift */; };
+		385E343A2452016B00931F8B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E34392452016B00931F8B /* NetworkManager.swift */; };
 		3868CC4D244F17F6008DEC81 /* PriceLabelsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */; };
 		3868CC4F244F18E3008DEC81 /* OriginalPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC4E244F18E3008DEC81 /* OriginalPriceLabel.swift */; };
 		3868CC52244F1E10008DEC81 /* FinalPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC51244F1E10008DEC81 /* FinalPriceLabel.swift */; };
@@ -36,6 +37,7 @@
 		38103229244EE6B600113AC1 /* ProductHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHeaderCell.swift; sourceTree = "<group>"; };
 		3810322A244EE6B600113AC1 /* ProductHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductHeaderCell.xib; sourceTree = "<group>"; };
 		381D92F9245174C30067C07A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		385E34392452016B00931F8B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabelsStackView.swift; sourceTree = "<group>"; };
 		3868CC4E244F18E3008DEC81 /* OriginalPriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalPriceLabel.swift; sourceTree = "<group>"; };
 		3868CC51244F1E10008DEC81 /* FinalPriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPriceLabel.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 				3868CC622450656E008DEC81 /* CategoryLabel.swift */,
 			);
 			path = Product;
+			sourceTree = "<group>";
+		};
+		385E34382452015600931F8B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				385E34392452016B00931F8B /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		3868CC53244F1E70008DEC81 /* Extensions */ = {
@@ -136,6 +146,7 @@
 				388C14BE244EBC94003323F2 /* ViewControllers */,
 				388C14C0244EBCCC003323F2 /* Model */,
 				388C14BF244EBCC1003323F2 /* Views */,
+				385E34382452015600931F8B /* Network */,
 				3868CC53244F1E70008DEC81 /* Extensions */,
 				388C14AA244E936E003323F2 /* AppDelegate.swift */,
 				388C14AC244E936E003323F2 /* SceneDelegate.swift */,
@@ -194,7 +205,6 @@
 				1358D50A20262260DC847020 /* Pods-SideDishApp.debug.xcconfig */,
 				0D9D542A05749160B83F5E28 /* Pods-SideDishApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -324,6 +334,7 @@
 				3868CC632450656E008DEC81 /* CategoryLabel.swift in Sources */,
 				3868CC61245039F6008DEC81 /* BadgeLabelsStackView.swift in Sources */,
 				3868CC5F24501BAF008DEC81 /* BadgeLabel.swift in Sources */,
+				385E343A2452016B00931F8B /* NetworkManager.swift in Sources */,
 				3868CC4D244F17F6008DEC81 /* PriceLabelsStackView.swift in Sources */,
 				388C14AD244E936E003323F2 /* SceneDelegate.swift in Sources */,
 				3868CC57244F2A63008DEC81 /* String+Extension.swift in Sources */,
