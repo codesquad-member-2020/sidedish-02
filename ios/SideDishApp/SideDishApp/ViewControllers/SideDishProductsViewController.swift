@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toaster
 
 class SideDishProductsViewController: UIViewController {
 
@@ -73,7 +74,10 @@ class SideDishProductsViewController: UIViewController {
 
 extension SideDishProductsViewController: ProductHeaderCellDelegate {
     func didTapProductHeaderCell(at section: Int) {
-        // get data using section
+        let category = categories[section]
+        let products = productsList[section]
+        
+        Toast(text: "\(category.name), 총 \(products.count)개 상품이 있습니다.", delay: 0, duration: 2).show()
     }
 }
 
