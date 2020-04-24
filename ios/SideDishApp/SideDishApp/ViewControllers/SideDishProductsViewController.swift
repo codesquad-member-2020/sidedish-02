@@ -100,6 +100,14 @@ extension SideDishProductsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
         let products = productsList[indexPath.section]
         let product = products.product(at: indexPath.row)
+        
+        networkManager.fetchImage(from: product.imageURL) { (data) in
+            guard let data = data else { return }
+            let image = UIImage(data: data)
+            DispatchQueue.main.async {
+                cell.configureProductImage(image)
+            }
+        }
         cell.configureProductCell(with: product)
         return cell
     }

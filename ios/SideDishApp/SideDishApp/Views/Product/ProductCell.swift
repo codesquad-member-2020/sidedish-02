@@ -24,6 +24,10 @@ class ProductCell: UITableViewCell {
         configureImageView()
     }
     
+    func configureProductImage(_ image: UIImage?) {
+        self.productImageView.image = image
+    }
+    
     func configureProductCell(with product: Product) {
         titleLabel.text = product.title
         descriptionLabel.text = product.description
