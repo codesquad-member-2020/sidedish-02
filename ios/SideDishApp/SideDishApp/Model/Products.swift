@@ -18,4 +18,8 @@ struct Products {
     init(_ products: [Product] = []) {
         self.products = products
     }
+    
+    func product(at index: Int) -> Product {
+        return products[index]
+    }
 }
