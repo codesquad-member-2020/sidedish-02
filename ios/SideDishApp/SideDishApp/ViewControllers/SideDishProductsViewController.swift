@@ -29,19 +29,23 @@ class SideDishProductsViewController: UIViewController {
         
         configureTableView()
         configureNavigationBar()
-        
-        categories.enumerated().forEach { (index, category) in
-            networkManager.getResource(from: NetworkManager.EndPoints.SideDishes, path: category.path, type: ProductList.self) { (productList, error) in
-                if let error = error {
-                    print(error)
-                }
-                
-                if let productList = productList {
-                    DispatchQueue.main.async {
-                        self.productsList[index] = Products(productList.products)
-                        self.reloadSection(at: index)
-                    }
-                }
+
+        fetchCategories()
+    }
+    
+    private func fetchCategories() {
+        categories.enumerated().forEach { (section, category) in
+            fetchProducts(at: section, of: category)
+        }
+    }
+    
+    private func fetchProducts(at section: Int, of category: Category) {
+        networkManager.getResource(from: NetworkManager.EndPoints.SideDishes, path: category.path, type: ProductList.self) { (productList, error) in
+            if let error = error { print(error) }
+            guard let productList = productList else { return }
+            DispatchQueue.main.async {
+                self.productsList[section] = Products(productList.products)
+                self.reloadSection(at: section)
             }
         }
     }
