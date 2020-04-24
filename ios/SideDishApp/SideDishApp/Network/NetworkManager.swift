@@ -27,4 +27,10 @@ class NetworkManager {
             }
         }
     }
+    
+    func fetchImage(from: String, completion: @escaping (Data?) -> Void) {
+        AF.request(from).responseData { (response) in
+            completion(response.data)
+        }
+    }
 }
