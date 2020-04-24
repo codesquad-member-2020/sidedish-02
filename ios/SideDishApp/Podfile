@@ -5,8 +5,9 @@ target 'SideDishApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for SideDishApp
+  pod 'Toaster', :git => 'https://github.com/devxoul/Toaster.git', :branch => 'master'
+  pod 'Alamofire', '~> 5.1'
 
-pod 'Toaster', :git => 'https://github.com/devxoul/Toaster.git', :branch => 'master'
+  # Pods for SideDishApp
 
 end
