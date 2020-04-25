@@ -42,7 +42,10 @@ class SideDishProductsViewController: UIViewController {
     
     private func fetchProducts(at section: Int, of category: Category) {
         networkManager.getResource(from: NetworkManager.EndPoints.SideDishes, path: category.path, type: ProductList.self) { (productList, error) in
-            if let error = error { print(error) }
+            if error != nil {
+                Toast(text: "네트워크 에러로 데이터를 불러올 수 없습니다.", delay: 0, duration: 3).show()
+                return
+            }
             guard let productList = productList else { return }
             DispatchQueue.main.async {
                 self.productsList[section] = Products(productList.products)
