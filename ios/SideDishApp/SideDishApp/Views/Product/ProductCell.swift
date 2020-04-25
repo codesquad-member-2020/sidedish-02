@@ -46,7 +46,7 @@ class ProductCell: UITableViewCell {
     }
     
     private func configureImageView() {
-        productImageView.backgroundColor = UIColor(named: "keyColor")
+        productImageView.backgroundColor = UIColor(named: "subtitle-gray")
         productImageView.layer.cornerRadius = productImageView.frame.height / 2
     }
 }
