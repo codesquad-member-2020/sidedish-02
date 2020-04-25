@@ -108,11 +108,15 @@ extension SideDishProductsViewController: UITableViewDataSource {
         let products = productsList[indexPath.section]
         let product = products.product(at: indexPath.row)
         
-        networkManager.fetchImage(from: product.imageURL) { (data) in
-            guard let data = data else { return }
-            let image = UIImage(data: data)
-            DispatchQueue.main.async {
-                cell.configureProductImage(image)
+        networkManager.fetchImage(from: product.imageURL) { (result) in
+            switch result {
+            case .success(let data):
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    cell.configureProductImage(image)
+                }
+            case .failure(_):
+                break
             }
         }
         cell.configureDetailHash(product.detailHash)

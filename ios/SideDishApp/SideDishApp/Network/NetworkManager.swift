@@ -9,6 +9,11 @@
 import Foundation
 import Alamofire
 
+enum NetworkErrorCase : Error {
+    case InvalidURL
+    case NotFound
+}
+
 class NetworkManager {
     
     enum EndPoints {
@@ -28,9 +33,15 @@ class NetworkManager {
         }
     }
     
-    func fetchImage(from: String, completion: @escaping (Data?) -> Void) {
-        AF.request(from).responseData { (response) in
-            completion(response.data)
-        }
+    func fetchImage(from: String, completion: @escaping (Result<Data, NetworkErrorCase>) -> Void) {
+        let URLRequest = URL(string: from)!
+        URLSession.shared.dataTask(with: URLRequest) { (data, _, error) in
+            if error != nil { completion(.failure(.InvalidURL)) }
+            guard let data = data else {
+                completion(.failure(.InvalidURL))
+                return
+            }
+            completion(.success(data))
+        }.resume()
     }
 }
