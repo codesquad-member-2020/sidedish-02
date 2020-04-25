@@ -15,8 +15,8 @@ class NetworkManager {
         static let SideDishes = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan"
     }
     
-    func getResource<T: Decodable>(from: String, path: String? = nil, type: T.Type, completion: @escaping (T?, Error?) -> ()) {
-        let pathURL = (path != nil) ? "/\(path!)" : ""
+    func getResource<T: Decodable>(from: String, path: String = "", type: T.Type, completion: @escaping (T?, Error?) -> ()) {
+        let pathURL = (path != "") ? "/\(path)" : ""
         let requestURL = from + pathURL
         AF.request(requestURL).responseDecodable(of: T.self, queue: .main, decoder: JSONDecoder()) { (response) in
             switch response.result {
