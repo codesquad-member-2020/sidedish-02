@@ -70,13 +70,12 @@ class SideDishProductsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        let nib = UINib(nibName: ProductHeaderCell.xibName, bundle: Bundle.main)
-        tableView.register(nib, forCellReuseIdentifier: ProductHeaderCell.xibName)
+        tableView.register(ProductHeaderView.self, forHeaderFooterViewReuseIdentifier: ProductHeaderView.reuseIdentifier)
     }
 }
 
-extension SideDishProductsViewController: ProductHeaderCellDelegate {
-    func didTapProductHeaderCell(at section: Int) {
+extension SideDishProductsViewController: ProductHeaderViewDelegate {
+    func didTapProductHeaderView(at section: Int) {
         let category = categories[section]
         let products = productsList[section]
         
@@ -87,12 +86,12 @@ extension SideDishProductsViewController: ProductHeaderCellDelegate {
 extension SideDishProductsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: ProductHeaderCell.xibName) as? ProductHeaderCell
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProductHeaderView.reuseIdentifier) as! ProductHeaderView
         let category = categories[section]
-        headerCell?.delegate = self
-        headerCell?.configureSection(section)
-        headerCell?.configureHeaderWith(category: category.name, title: category.description)
-        return headerCell
+        headerView.delegate = self
+        headerView.configureSection(section)
+        headerView.configureHeaderWith(categoryName: category.name, categoryDescription: category.description)
+        return headerView
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
