@@ -17,20 +17,23 @@ class ProductHeaderView: UITableViewHeaderFooterView {
     static let reuseIdentifier: String = String(describing: self)
     static let height: CGFloat = 80
     
+    private let categoryNameFontSize: CGFloat = 13
+    private let categoryDescriptionFontSize: CGFloat = 19
+    
     lazy var categoryNameLabel: CategoryLabel = {
         let label = CategoryLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.layer.borderWidth = borderWidth
         label.layer.borderColor = categoryNameColor?.cgColor
         label.textColor = categoryNameColor
-        label.font = .systemFont(ofSize: 13)
+        label.font = .systemFont(ofSize: categoryNameFontSize)
         return label
     }()
     
-    private var categoryDescriptionLabel: UILabel = {
+    lazy var categoryDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 19, weight: .bold)
+        label.font = .systemFont(ofSize: categoryDescriptionFontSize, weight: .bold)
         return label
     }()
     
