@@ -106,8 +106,7 @@ extension SideDishProductsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
-        let products = productsList[indexPath.section]
-        let product = products.product(at: indexPath.row)
+        let product = productsList[indexPath.section][indexPath.row]
         
         networkManager.fetchImage(from: product.imageURL) { (result) in
             switch result {
