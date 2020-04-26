@@ -74,6 +74,14 @@ class ProductHeaderView: UITableViewHeaderFooterView {
     
     private func configureUI() {
         contentView.backgroundColor = .white
+        configureShadow()
+    }
+    
+    private func configureShadow() {
+        layer.shadowOpacity = 0.3
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 3)
+        layer.shadowRadius = 3
     }
     
     private func configureTapRecognizer() {
