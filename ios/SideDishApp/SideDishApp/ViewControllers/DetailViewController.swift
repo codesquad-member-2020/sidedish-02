@@ -14,6 +14,10 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var gradientLayerContainerView: UIView!
     
+    private let backButtonColor: UIColor? = UIColor(named: "darkGray-white")
+    private let defaultBackgroundColor: UIColor? = UIColor(named: "default-bg")
+    private let clearColor: UIColor? = UIColor(named: "detail-clear")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +28,7 @@ class DetailViewController: UIViewController {
     private func configureGradientBackgroundView() {
         let gradientLayer = CAGradientLayer()
         gradientLayerContainerView.backgroundColor = .clear
-        gradientLayer.colors = [UIColor.init(white: 1, alpha: 0).cgColor, UIColor.white.cgColor, UIColor.white.cgColor]
+        gradientLayer.colors = [clearColor!.cgColor, defaultBackgroundColor!.cgColor, defaultBackgroundColor!.cgColor]
         gradientLayer.locations = [0, 0.4, 1]
         gradientLayer.frame = gradientLayerContainerView.bounds
         gradientLayerContainerView.layer.insertSublayer(gradientLayer, at: 0)
@@ -35,7 +39,7 @@ class DetailViewController: UIViewController {
     private func configureNavigationBar() {
         let backButtonImage = UIImage(named: "back.button")
         let backButtonItem = UIBarButtonItem.init(image: backButtonImage, style: .plain, target: self, action: #selector(handleBack))
-        backButtonItem.tintColor = .black
+        backButtonItem.tintColor = backButtonColor
         self.navigationItem.setLeftBarButton(backButtonItem, animated: false)
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }

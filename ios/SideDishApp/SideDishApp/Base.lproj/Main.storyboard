@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y5r-Gt-MUv">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -18,7 +18,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZyG-0V-986">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="default-bg"/>
+                                <color key="sectionIndexBackgroundColor" name="default-bg"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="product" id="pvt-CM-9GU" customClass="ProductCell" customModule="SideDishApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="118.5"/>
@@ -106,6 +107,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <color key="backgroundColor" name="default-bg"/>
                                             <constraints>
                                                 <constraint firstItem="Mta-05-CeQ" firstAttribute="leading" secondItem="p0E-P6-VDk" secondAttribute="trailing" constant="16" id="Dmw-xN-wDV"/>
                                                 <constraint firstAttribute="bottom" secondItem="Mta-05-CeQ" secondAttribute="bottom" priority="750" constant="16" id="E3o-9g-6aV"/>
@@ -118,6 +120,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="p0E-P6-VDk" secondAttribute="bottom" constant="12" id="upH-rk-ov2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="default-bg"/>
                                         <connections>
                                             <outlet property="badgeLabelsStackView" destination="sUt-CG-kJr" id="5ey-DF-Iw3"/>
                                             <outlet property="descriptionLabel" destination="mEx-wd-TFn" id="FDv-DO-rDU"/>
@@ -129,7 +132,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="default-bg"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ZyG-0V-986" secondAttribute="bottom" id="Nfs-yu-9Pw"/>
                             <constraint firstAttribute="trailing" secondItem="ZyG-0V-986" secondAttribute="trailing" id="Olc-sG-e3a"/>
@@ -192,7 +195,7 @@
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOs-Vc-jyC">
                                                 <rect key="frame" x="0.0" y="469" width="414" height="8"/>
-                                                <color key="backgroundColor" red="0.93601284898477155" green="0.93601284898477155" blue="0.93601284898477155" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" name="detail-boundary-view"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="8" id="6vF-9R-Lgo"/>
                                                 </constraints>
@@ -222,7 +225,7 @@
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kf6-Po-Aof">
                                                 <rect key="frame" x="0.0" y="588.5" width="414" height="8"/>
-                                                <color key="backgroundColor" red="0.93726116420000005" green="0.93724352119999998" blue="0.93725550170000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" name="detail-boundary-view"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="8" id="28p-DI-cGP"/>
                                                 </constraints>
@@ -253,7 +256,7 @@
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrn-1c-IuP" userLabel="bottomView">
                                                 <rect key="frame" x="0.0" y="4210" width="414" height="100"/>
-                                                <color key="backgroundColor" red="0.89909184639999995" green="0.89909184639999995" blue="0.89909184639999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" name="detail-boundary-view"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="hxl-FD-Pr0"/>
                                                 </constraints>
@@ -277,7 +280,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" name="default-bg"/>
                                         <constraints>
                                             <constraint firstItem="lOs-Vc-jyC" firstAttribute="leading" secondItem="IcD-Vi-BkJ" secondAttribute="leading" id="0uH-g2-tyd"/>
                                             <constraint firstItem="I1X-nJ-a80" firstAttribute="centerX" secondItem="IcD-Vi-BkJ" secondAttribute="centerX" id="1Sm-Fv-1bl"/>
@@ -351,7 +354,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="default-bg"/>
                         <constraints>
                             <constraint firstItem="pBy-LX-l1h" firstAttribute="trailing" secondItem="uvg-Kv-0Ai" secondAttribute="trailing" constant="8" id="0Yh-39-hrc"/>
                             <constraint firstItem="pBy-LX-l1h" firstAttribute="trailing" secondItem="tsz-gD-jVY" secondAttribute="trailing" id="10f-he-0ZB"/>
@@ -411,6 +414,12 @@
         </namedColor>
         <namedColor name="badge-gift">
             <color red="0.93400001525878906" green="0.72299998998641968" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="default-bg">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="detail-boundary-view">
+            <color red="0.93601284900000004" green="0.93601284900000004" blue="0.93601284900000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="keyColor">
             <color red="0.3619999885559082" green="0.74900001287460327" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

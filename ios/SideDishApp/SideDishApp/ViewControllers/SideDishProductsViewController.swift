@@ -14,6 +14,7 @@ class SideDishProductsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let navigationTitle = "반찬 코너"
+    private let defaultBackgroundColor: UIColor? = UIColor(named: "default-bg")
     
     let categories = [
         Category(name: "메인반찬", description: "한그릇 뚝딱 메인 요리", path: "main"),
@@ -64,6 +65,7 @@ class SideDishProductsViewController: UIViewController {
     private func configureNavigationBar() {
         navigationItem.title = navigationTitle
         navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = defaultBackgroundColor
     }
     
     private func configureTableView() {

@@ -21,6 +21,9 @@ class ProductHeaderView: UITableViewHeaderFooterView {
     private let categoryDescriptionFontSize: CGFloat = 19
     private let borderWidth: CGFloat = 1
     private let categoryNameColor: UIColor? = UIColor(named: "subtitle-gray")
+    private let headerViewBackgroundColor: UIColor? = UIColor(named: "headerview-bg")
+    private let descriptionTextColor: UIColor? = UIColor(named: "black")
+    private let shadowColor: UIColor? = UIColor(named: "header-shadow")
     private let nameToDescriptionConstant: CGFloat = 12
     private let descriptionToBottomConstant: CGFloat = 8
     
@@ -38,6 +41,7 @@ class ProductHeaderView: UITableViewHeaderFooterView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: categoryDescriptionFontSize, weight: .bold)
+        label.textColor = descriptionTextColor
         return label
     }()
     
@@ -73,13 +77,13 @@ class ProductHeaderView: UITableViewHeaderFooterView {
     }
     
     private func configureUI() {
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = headerViewBackgroundColor
         configureShadow()
     }
     
     private func configureShadow() {
         layer.shadowOpacity = 0.3
-        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowColor = shadowColor?.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 3)
         layer.shadowRadius = 3
     }
