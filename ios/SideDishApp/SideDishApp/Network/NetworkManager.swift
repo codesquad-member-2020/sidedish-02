@@ -23,7 +23,7 @@ class NetworkManager {
     func getResource<T: Decodable>(from: String, path: String = "", type: T.Type, completion: @escaping (T?, Error?) -> ()) {
         let pathURL = (path != "") ? "/\(path)" : ""
         let requestURL = from + pathURL
-        AF.request(requestURL).responseDecodable(of: T.self, queue: .main, decoder: JSONDecoder()) { (response) in
+        AF.request(requestURL).responseDecodable(of: T.self, queue: .global(qos: .background), decoder: JSONDecoder()) { (response) in
             switch response.result {
             case .success(let decodedData):
                 completion(decodedData, nil)
