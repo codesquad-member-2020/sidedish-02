@@ -119,7 +119,6 @@ extension SideDishProductsViewController: UITableViewDataSource {
                 break
             }
         }
-        cell.configureDetailHash(product.detailHash)
         cell.configureProductCell(with: product)
         return cell
     }
