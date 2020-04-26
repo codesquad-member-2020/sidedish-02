@@ -126,7 +126,7 @@ extension SideDishProductsViewController: UITableViewDataSource {
 extension SideDishProductsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return ProductHeaderCell.height
+        return ProductHeaderView.height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

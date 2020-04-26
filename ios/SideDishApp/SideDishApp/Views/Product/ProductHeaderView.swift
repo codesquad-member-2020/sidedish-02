@@ -15,6 +15,7 @@ protocol ProductHeaderViewDelegate {
 class ProductHeaderView: UITableViewHeaderFooterView {
 
     static let reuseIdentifier: String = String(describing: self)
+    static let height: CGFloat = 80
     
     lazy var categoryNameLabel: CategoryLabel = {
         let label = CategoryLabel()
