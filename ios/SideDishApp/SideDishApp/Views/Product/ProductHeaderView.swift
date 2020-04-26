@@ -19,6 +19,8 @@ class ProductHeaderView: UITableViewHeaderFooterView {
     
     private let categoryNameFontSize: CGFloat = 13
     private let categoryDescriptionFontSize: CGFloat = 19
+    private let borderWidth: CGFloat = 1
+    private let categoryNameColor: UIColor? = UIColor(named: "subtitle-gray")
     
     lazy var categoryNameLabel: CategoryLabel = {
         let label = CategoryLabel()
@@ -38,9 +40,6 @@ class ProductHeaderView: UITableViewHeaderFooterView {
     }()
     
     private var tapGestureRecognizer: UITapGestureRecognizer!
-    
-    private let borderWidth: CGFloat = 1
-    private let categoryNameColor: UIColor? = UIColor(named: "subtitle-gray")
     
     private var section: Int!
     var delegate: ProductHeaderViewDelegate?
