@@ -18,6 +18,8 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var priceLabelsStackView: PriceLabelsStackView!
     @IBOutlet weak var badgeLabelsStackView: BadgeLabelsStackView!
     
+    private var loadingColor: UIColor? = UIColor(named: "subtitle-gray")
+    
     private var detailHash: String!
     
     override func awakeFromNib() {
@@ -46,7 +48,11 @@ class ProductCell: UITableViewCell {
     }
     
     private func configureImageView() {
-        productImageView.backgroundColor = UIColor(named: "keyColor")
+        productImageView.backgroundColor = loadingColor
         productImageView.layer.cornerRadius = productImageView.frame.height / 2
+    }
+    
+    override func prepareForReuse() {
+        productImageView.image = nil
     }
 }
