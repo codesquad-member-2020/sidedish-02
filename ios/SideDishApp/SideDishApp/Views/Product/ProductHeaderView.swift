@@ -21,6 +21,8 @@ class ProductHeaderView: UITableViewHeaderFooterView {
     private let categoryDescriptionFontSize: CGFloat = 19
     private let borderWidth: CGFloat = 1
     private let categoryNameColor: UIColor? = UIColor(named: "subtitle-gray")
+    private let nameToDescriptionConstant: CGFloat = 12
+    private let descriptionToBottomConstant: CGFloat = 8
     
     lazy var categoryNameLabel: CategoryLabel = {
         let label = CategoryLabel()
@@ -65,9 +67,9 @@ class ProductHeaderView: UITableViewHeaderFooterView {
         contentView.addSubview(categoryDescriptionLabel)
         
         categoryDescriptionLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        categoryDescriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
+        categoryDescriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -nameToDescriptionConstant).isActive = true
         categoryNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        categoryNameLabel.bottomAnchor.constraint(equalTo: categoryDescriptionLabel.topAnchor, constant: -8).isActive = true
+        categoryNameLabel.bottomAnchor.constraint(equalTo: categoryDescriptionLabel.topAnchor, constant: -descriptionToBottomConstant).isActive = true
     }
     
     private func configureUI() {
