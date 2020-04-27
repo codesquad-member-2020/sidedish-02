@@ -12,6 +12,14 @@ class DetailViewController: UIViewController {
 
     static let identifier = "DetailViewController"
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var priceLabelsStackView: UIStackView!
+    @IBOutlet weak var pointLabel: UILabel!
+    @IBOutlet weak var deliveryFeeLabel: UILabel!
+    @IBOutlet weak var deliveryInfoLabel: UILabel!
+    @IBOutlet weak var detailImagesStackView: UIStackView!
+    
     @IBOutlet weak var gradientLayerContainerView: UIView!
     
     private let backButtonColor: UIColor? = UIColor(named: "darkGray-white")
@@ -23,6 +31,13 @@ class DetailViewController: UIViewController {
 
         configureNavigationBar()
         configureGradientBackgroundView()
+    }
+    
+    func configureDetailViewController(with detail: Detail) {
+        descriptionLabel.text = detail.description
+        pointLabel.text = detail.point
+        deliveryFeeLabel.text = detail.deliveryFee
+        deliveryInfoLabel.text = detail.deliveryInfo
     }
     
     private func configureGradientBackgroundView() {

@@ -131,7 +131,16 @@ extension SideDishProductsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewController = storyboard?.instantiateViewController(identifier: DetailViewController.identifier)
-        navigationController?.pushViewController(detailViewController!, animated: true)
+        let detailViewController = storyboard?.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
+        let product = productsList[indexPath.section][indexPath.row]
+        let detailHash = product.detailHash
+        networkManager.getResource(from: NetworkManager.EndPoints.Detail, path: detailHash, type: DetailContainer.self) { (detailContainer, error) in
+            guard let detailContainer = detailContainer else { return }
+            let detail = detailContainer.data
+            DispatchQueue.main.async {
+                detailViewController.configureDetailViewController(with: detail)
+            }
+        }
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

@@ -372,7 +372,14 @@
                         <viewLayoutGuide key="safeArea" id="pBy-LX-l1h"/>
                     </view>
                     <connections>
+                        <outlet property="deliveryFeeLabel" destination="Qey-Ax-Oni" id="yxp-O6-d5M"/>
+                        <outlet property="deliveryInfoLabel" destination="xCu-2D-naZ" id="0Oi-g5-VaC"/>
+                        <outlet property="descriptionLabel" destination="jBF-uC-Te4" id="6D6-9b-83o"/>
+                        <outlet property="detailImagesStackView" destination="VKA-Xn-BtL" id="PKQ-WU-dj5"/>
                         <outlet property="gradientLayerContainerView" destination="tsz-gD-jVY" id="Nt1-Gg-aNy"/>
+                        <outlet property="pointLabel" destination="CHt-zc-XEf" id="r2v-H9-VWJ"/>
+                        <outlet property="priceLabelsStackView" destination="GFu-Sf-wT3" id="keQ-bu-Q49"/>
+                        <outlet property="titleLabel" destination="pON-By-ZtW" id="Uax-nT-meh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hx4-Kq-Sfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -419,7 +426,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="detail-boundary-view">
-            <color red="0.93601284900000004" green="0.93601284900000004" blue="0.93601284900000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.93599998950958252" green="0.93599998950958252" blue="0.93599998950958252" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="keyColor">
             <color red="0.3619999885559082" green="0.74900001287460327" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
