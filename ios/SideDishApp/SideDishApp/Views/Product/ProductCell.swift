@@ -20,16 +20,10 @@ class ProductCell: UITableViewCell {
     
     private var loadingColor: UIColor? = UIColor(named: "subtitle-gray")
     
-    private var detailHash: String!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         configureImageView()
-    }
-    
-    func configureDetailHash(_ detailHash: String) {
-        self.detailHash = detailHash
     }
     
     func configureProductImage(_ image: UIImage?) {

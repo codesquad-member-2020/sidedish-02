@@ -19,7 +19,7 @@ struct Products {
         self.products = products
     }
     
-    func product(at index: Int) -> Product {
+    subscript(index: Int) -> Product {
         return products[index]
     }
 }

@@ -14,6 +14,7 @@ class SideDishProductsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let navigationTitle = "반찬 코너"
+    private let defaultBackgroundColor: UIColor? = UIColor(named: "default-bg")
     
     let categories = [
         Category(name: "메인반찬", description: "한그릇 뚝딱 메인 요리", path: "main"),
@@ -64,19 +65,19 @@ class SideDishProductsViewController: UIViewController {
     private func configureNavigationBar() {
         navigationItem.title = navigationTitle
         navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = defaultBackgroundColor
     }
     
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         
-        let nib = UINib(nibName: ProductHeaderCell.xibName, bundle: Bundle.main)
-        tableView.register(nib, forCellReuseIdentifier: ProductHeaderCell.xibName)
+        tableView.register(ProductHeaderView.self, forHeaderFooterViewReuseIdentifier: ProductHeaderView.reuseIdentifier)
     }
 }
 
-extension SideDishProductsViewController: ProductHeaderCellDelegate {
-    func didTapProductHeaderCell(at section: Int) {
+extension SideDishProductsViewController: ProductHeaderViewDelegate {
+    func didTapProductHeaderView(at section: Int) {
         let category = categories[section]
         let products = productsList[section]
         
@@ -87,12 +88,12 @@ extension SideDishProductsViewController: ProductHeaderCellDelegate {
 extension SideDishProductsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: ProductHeaderCell.xibName) as? ProductHeaderCell
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProductHeaderView.reuseIdentifier) as! ProductHeaderView
         let category = categories[section]
-        headerCell?.delegate = self
-        headerCell?.configureSection(section)
-        headerCell?.configureHeaderWith(category: category.name, title: category.description)
-        return headerCell
+        headerView.delegate = self
+        headerView.configureSection(section)
+        headerView.configureHeaderWith(categoryName: category.name, categoryDescription: category.description)
+        return headerView
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -105,8 +106,7 @@ extension SideDishProductsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
-        let products = productsList[indexPath.section]
-        let product = products.product(at: indexPath.row)
+        let product = productsList[indexPath.section][indexPath.row]
         
         networkManager.fetchImage(from: product.imageURL) { (result) in
             switch result {
@@ -119,7 +119,6 @@ extension SideDishProductsViewController: UITableViewDataSource {
                 break
             }
         }
-        cell.configureDetailHash(product.detailHash)
         cell.configureProductCell(with: product)
         return cell
     }
@@ -128,7 +127,7 @@ extension SideDishProductsViewController: UITableViewDataSource {
 extension SideDishProductsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return ProductHeaderCell.height
+        return ProductHeaderView.height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
