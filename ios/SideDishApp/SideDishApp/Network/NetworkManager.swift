@@ -35,12 +35,10 @@ class NetworkManager {
     
     func fetchImage(from: String, completion: @escaping (Result<Data, NetworkErrorCase>) -> Void) {
         let URLRequest = URL(string: from)!
-        URLSession.shared.dataTask(with: URLRequest) { (data, _, error) in
+        URLSession.shared.downloadTask(with: URLRequest) { (url, _, error) in
             if error != nil { completion(.failure(.InvalidURL)) }
-            guard let data = data else {
-                completion(.failure(.InvalidURL))
-                return
-            }
+            guard let url = url else { completion(.failure(.InvalidURL)); return }
+            guard let data = try? Data(contentsOf: url) else { completion(.failure(.InvalidURL)); return }
             completion(.success(data))
         }.resume()
     }
