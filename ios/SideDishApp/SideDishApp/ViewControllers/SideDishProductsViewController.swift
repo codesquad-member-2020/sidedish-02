@@ -138,7 +138,7 @@ extension SideDishProductsViewController: UITableViewDelegate {
             guard let detailContainer = detailContainer else { return }
             let detail = detailContainer.data
             DispatchQueue.main.async {
-                detailViewController.configureDetailViewController(with: detail)
+                detailViewController.configureDetailViewController(title: product.title, with: detail)
             }
         }
         navigationController?.pushViewController(detailViewController, animated: true)

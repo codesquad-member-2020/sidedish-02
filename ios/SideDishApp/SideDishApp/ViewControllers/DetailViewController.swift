@@ -33,7 +33,8 @@ class DetailViewController: UIViewController {
         configureGradientBackgroundView()
     }
     
-    func configureDetailViewController(with detail: Detail) {
+    func configureDetailViewController(title: String, with detail: Detail) {
+        titleLabel.text = title
         descriptionLabel.text = detail.description
         pointLabel.text = detail.point
         deliveryFeeLabel.text = detail.deliveryFee
