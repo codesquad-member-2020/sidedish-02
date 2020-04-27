@@ -34,7 +34,11 @@ class ThumbnailsPageViewController: UIPageViewController {
         super.viewDidLoad()
 
         dataSource = self
-        view.backgroundColor = .green
+        configureUI()
+    }
+    
+    private func configureUI() {
+        view.backgroundColor = .clear
     }
     
     func configureImageURLs(_ imageURLs: [String]) {
