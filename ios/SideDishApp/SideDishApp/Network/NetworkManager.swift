@@ -51,6 +51,7 @@ class NetworkManager {
                 guard let data = try? Data(contentsOf: url) else { completion(.failure(.InvalidURL)); return }
                 // temp url의 data를 cachedImageFileURL에 저장
                 try? FileManager.default.copyItem(at: url, to: cachedImageFileURL)
+                try? FileManager.default.removeItem(at: url)
                 completion(.success(data))
             }.resume()
         }
