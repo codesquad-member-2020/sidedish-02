@@ -18,7 +18,7 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var priceLabelsStackView: PriceLabelsStackView!
     @IBOutlet weak var badgeLabelsStackView: BadgeLabelsStackView!
     
-    private var loadingColor: UIColor? = UIColor(named: "subtitle-gray")
+    private var loadingColor: UIColor? = UIColor(named: "loading-color")
     
     override func awakeFromNib() {
         super.awakeFromNib()
