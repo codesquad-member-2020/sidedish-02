@@ -10,16 +10,16 @@ import UIKit
 
 class ThumbnailsPageViewController: UIPageViewController {
 
-    var controllers = [UIViewController]()
+    private var thumbnailImageViewControllers = [UIViewController]()
     
     private var imageURLs: [String]! {
         didSet {
             imageURLs.forEach { (_) in
                 let vc = UIViewController()
                 vc.view.backgroundColor = UIColor(displayP3Red: CGFloat.random(in: 0.0...1.0), green: CGFloat.random(in: 0.0...1.0), blue: CGFloat.random(in: 0.0...1.0), alpha: 1)
-                controllers.append(vc)
+                thumbnailImageViewControllers.append(vc)
             }
-            setViewControllers([controllers.first!], direction: .forward, animated: false)
+            setViewControllers([thumbnailImageViewControllers.first!], direction: .forward, animated: false)
         }
     }
     
@@ -46,14 +46,14 @@ class ThumbnailsPageViewController: UIPageViewController {
 extension ThumbnailsPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let index = controllers.firstIndex(where: { $0 == viewController }) ?? 0
+        let index = thumbnailImageViewControllers.firstIndex(where: { $0 == viewController }) ?? 0
         if index == 0 { return nil }
-        return controllers[index - 1]
+        return thumbnailImageViewControllers[index - 1]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let index = controllers.firstIndex(where: { $0 == viewController }) ?? 0
-        if index == controllers.count - 1 { return nil }
-        return controllers[index + 1]
+        let index = thumbnailImageViewControllers.firstIndex(where: { $0 == viewController }) ?? 0
+        if index == thumbnailImageViewControllers.count - 1 { return nil }
+        return thumbnailImageViewControllers[index + 1]
     }
 }
