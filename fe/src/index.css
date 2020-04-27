@@ -21,9 +21,8 @@ code {
   width: 100%;
   height: 50px;
   background-color: #484035;
-  padding: 0px 3%;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
 }
 
@@ -44,6 +43,7 @@ code {
   display: inline-block;
   height: 80%;
   top: 10%;
+  margin: 0 5px;
 }
 
 .dropdown-content {
@@ -85,10 +85,10 @@ code {
 }
 
 
-
-
 .dish-wrap {
   margin-top: 30px;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .dish-wrap section{
@@ -117,17 +117,21 @@ code {
 .item_slide-wrap button {
   font-size: xx-large;
   color: #BEBEBE;
-  margin: 20px;
 }
 
-ul {
+.item_slide-wrap button:before {
+  font-size: xx-large;
+  color: #BEBEBE;
+} 
+
+.item-wrap {
+  width: -webkit-fill-available;
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .item {
   width: 180px;
+  min-height: 290px;
   margin: 0 20px;
 }
 
@@ -216,6 +220,7 @@ ul {
 }
 
 .item-badge {
+  margin: 3px;
   width: fit-content;
   padding: 5px;
   background-color: #A974BE;
@@ -239,6 +244,7 @@ ul {
   border: 1px solid #ECECEC;
   font-weight: bold;
   font-size: small;
+  display: block;
 }
 
 .soup-wrap {
