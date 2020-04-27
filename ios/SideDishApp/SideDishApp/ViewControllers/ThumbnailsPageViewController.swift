@@ -44,6 +44,7 @@ class ThumbnailsPageViewController: UIPageViewController {
 }
 
 extension ThumbnailsPageViewController: UIPageViewControllerDataSource {
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let index = controllers.firstIndex(where: { $0 == viewController }) ?? 0
         if index == 0 { return nil }
