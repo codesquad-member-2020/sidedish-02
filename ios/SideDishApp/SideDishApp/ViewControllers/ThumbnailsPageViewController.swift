@@ -10,13 +10,12 @@ import UIKit
 
 class ThumbnailsPageViewController: UIPageViewController {
 
-    private var thumbnailViewControllers = [UIViewController]()
+    private var thumbnailViewControllers = [ThumbnailViewController]()
     
     private var imageURLs: [String]! {
         didSet {
             imageURLs.forEach { (_) in
-                let vc = UIViewController()
-                vc.view.backgroundColor = UIColor(displayP3Red: CGFloat.random(in: 0.0...1.0), green: CGFloat.random(in: 0.0...1.0), blue: CGFloat.random(in: 0.0...1.0), alpha: 1)
+                let vc = ThumbnailViewController()
                 thumbnailViewControllers.append(vc)
             }
             setViewControllers([thumbnailViewControllers.first!], direction: .forward, animated: false)
