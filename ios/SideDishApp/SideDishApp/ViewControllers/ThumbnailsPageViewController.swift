@@ -10,16 +10,16 @@ import UIKit
 
 class ThumbnailsPageViewController: UIPageViewController {
 
-    private var thumbnailImageViewControllers = [UIViewController]()
+    private var thumbnailViewControllers = [UIViewController]()
     
     private var imageURLs: [String]! {
         didSet {
             imageURLs.forEach { (_) in
                 let vc = UIViewController()
                 vc.view.backgroundColor = UIColor(displayP3Red: CGFloat.random(in: 0.0...1.0), green: CGFloat.random(in: 0.0...1.0), blue: CGFloat.random(in: 0.0...1.0), alpha: 1)
-                thumbnailImageViewControllers.append(vc)
+                thumbnailViewControllers.append(vc)
             }
-            setViewControllers([thumbnailImageViewControllers.first!], direction: .forward, animated: false)
+            setViewControllers([thumbnailViewControllers.first!], direction: .forward, animated: false)
         }
     }
     
@@ -46,14 +46,14 @@ class ThumbnailsPageViewController: UIPageViewController {
 extension ThumbnailsPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let index = thumbnailImageViewControllers.firstIndex(where: { $0 == viewController }) ?? 0
+        let index = thumbnailViewControllers.firstIndex(where: { $0 == viewController }) ?? 0
         if index == 0 { return nil }
-        return thumbnailImageViewControllers[index - 1]
+        return thumbnailViewControllers[index - 1]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let index = thumbnailImageViewControllers.firstIndex(where: { $0 == viewController }) ?? 0
-        if index == thumbnailImageViewControllers.count - 1 { return nil }
-        return thumbnailImageViewControllers[index + 1]
+        let index = thumbnailViewControllers.firstIndex(where: { $0 == viewController }) ?? 0
+        if index == thumbnailViewControllers.count - 1 { return nil }
+        return thumbnailViewControllers[index + 1]
     }
 }
