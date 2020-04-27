@@ -36,8 +36,7 @@ class NetworkManager {
     func fetchImage(from: String, completion: @escaping (Result<Data, NetworkErrorCase>) -> Void) {
         let fileName = String(from.split(separator: "/").last!)
         let cachedImageFileURL = try! FileManager.default
-            .url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        .appendingPathComponent(fileName)
+            .url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(fileName)
         let URLRequest = URL(string: from)!
         
         if let cachedData = try? Data(contentsOf: cachedImageFileURL) {
