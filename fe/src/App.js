@@ -45,7 +45,7 @@ const App = () => {
         <DishWrap dishes={soup} category='국&middot;찌개' description='김이 모락모락' bold='국, 찌개' />
       </section>
 
-      <button className="dish-view-all" onClick={clickViewAll}>반찬 전체보기 &gt; </button>
+      <button className="dish-view-all" onClick={clickViewAll}>{viewAll ? '∧' : '∨'}</button>
     </>
   );
 }

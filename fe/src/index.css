@@ -85,10 +85,10 @@ code {
 }
 
 
-
-
 .dish-wrap {
   margin-top: 30px;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .dish-wrap section{
@@ -117,17 +117,21 @@ code {
 .item_slide-wrap button {
   font-size: xx-large;
   color: #BEBEBE;
-  margin: 20px;
 }
 
-ul {
+.item_slide-wrap button:before {
+  font-size: xx-large;
+  color: #BEBEBE;
+} 
+
+.item-wrap {
+  width: -webkit-fill-available;
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .item {
   width: 180px;
+  min-height: 290px;
   margin: 0 20px;
 }
 
