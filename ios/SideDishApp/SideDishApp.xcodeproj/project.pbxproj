@@ -184,10 +184,7 @@
 		388C14C0244EBCCC003323F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				38E0AF622452FB4300A26CB3 /* Product.swift */,
-				38E0AF642452FB5900A26CB3 /* Products.swift */,
-				38E0AF662452FB7700A26CB3 /* Category.swift */,
-				38E0AF682452FBE600A26CB3 /* ProductList.swift */,
+				38E2FCCE2456F46B00817780 /* Product */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +195,17 @@
 				38D7B8FA2451BCCD00F71799 /* OrderButton.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		38E2FCCE2456F46B00817780 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				38E0AF622452FB4300A26CB3 /* Product.swift */,
+				38E0AF642452FB5900A26CB3 /* Products.swift */,
+				38E0AF662452FB7700A26CB3 /* Category.swift */,
+				38E0AF682452FBE600A26CB3 /* ProductList.swift */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 		484E52AC9861286384B9F901 /* Frameworks */ = {
