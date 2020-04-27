@@ -34,6 +34,7 @@
 		38E0AF692452FBE600A26CB3 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0AF682452FBE600A26CB3 /* ProductList.swift */; };
 		38E2FCD12456F4B700817780 /* DetailContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2FCD02456F4B700817780 /* DetailContainer.swift */; };
 		38E2FCD32456F4E300817780 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2FCD22456F4E300817780 /* Detail.swift */; };
+		38E2FCD52457456400817780 /* ThumbnailsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2FCD42457456400817780 /* ThumbnailsPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		38E0AF682452FBE600A26CB3 /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
 		38E2FCD02456F4B700817780 /* DetailContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContainer.swift; sourceTree = "<group>"; };
 		38E2FCD22456F4E300817780 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		38E2FCD42457456400817780 /* ThumbnailsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailsPageViewController.swift; sourceTree = "<group>"; };
 		F73413738BBF5BACBA69C851 /* Pods_SideDishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SideDishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 			children = (
 				388C14AE244E936E003323F2 /* SideDishProductsViewController.swift */,
 				381D92F9245174C30067C07A /* DetailViewController.swift */,
+				38E2FCD42457456400817780 /* ThumbnailsPageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E2FCD52457456400817780 /* ThumbnailsPageViewController.swift in Sources */,
 				388C14AF244E936E003323F2 /* SideDishProductsViewController.swift in Sources */,
 				3868CC4F244F18E3008DEC81 /* OriginalPriceLabel.swift in Sources */,
 				38E2FCD32456F4E300817780 /* Detail.swift in Sources */,

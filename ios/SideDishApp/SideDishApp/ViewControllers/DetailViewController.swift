@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
 
     static let identifier = "DetailViewController"
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabelsStackView: UIStackView!
@@ -22,6 +23,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var gradientLayerContainerView: UIView!
     
+    let thumbnailPageViewController = ThumbnailsPageViewController()
+    
     private let backButtonColor: UIColor? = UIColor(named: "darkGray-white")
     private let defaultBackgroundColor: UIColor? = UIColor(named: "default-bg")
     private let clearColor: UIColor? = UIColor(named: "detail-clear")
@@ -29,11 +32,25 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureThumbnailPageViewController()
         configureNavigationBar()
         configureGradientBackgroundView()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        let thumbnailPageView = thumbnailPageViewController.view!
+        thumbnailPageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width)
+    }
+    
+    private func configureThumbnailPageViewController() {
+        let thumbnailPageView = thumbnailPageViewController.view!
+        scrollView.addSubview(thumbnailPageView)
+    }
+    
     func configureDetailViewController(title: String, with detail: Detail) {
+        thumbnailPageViewController.configureImageURLs(detail.thumbnailImageURLs)
         titleLabel.text = title
         descriptionLabel.text = detail.description
         pointLabel.text = detail.point
