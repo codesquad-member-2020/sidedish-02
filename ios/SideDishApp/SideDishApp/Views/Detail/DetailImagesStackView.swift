@@ -25,7 +25,6 @@ class DetailImagesStackView: UIStackView {
         imageViews.forEach { _ in
             let imageView = UIImageView()
             imageView.contentMode = .scaleAspectFit
-            imageView.backgroundColor = .red
             imageView.clipsToBounds = true
             addArrangedSubview(imageView)
         }
