@@ -34,25 +34,21 @@ class NetworkManager {
         }
     }
     
-    func fetchImage(from: String, completion: @escaping (Result<Data, NetworkErrorCase>) -> Void) {
-        let fileName = String(from.split(separator: "/").last!)
-        let cachedImageFileURL = try! FileManager.default
-            .url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(fileName)
+    func fetchImage(from: String, cachedImageFileURL: URL? = nil, completion: @escaping (Result<Data, NetworkErrorCase>) -> Void) {
+        
         let URLRequest = URL(string: from)!
         
-        if let cachedData = try? Data(contentsOf: cachedImageFileURL) {
-            completion(.success(cachedData))
-            return
-        } else {
-            URLSession.shared.downloadTask(with: URLRequest) { (url, _, error) in
-                if error != nil { completion(.failure(.InvalidURL)) }
-                guard let url = url else { completion(.failure(.InvalidURL)); return }
-                guard let data = try? Data(contentsOf: url) else { completion(.failure(.InvalidURL)); return }
-                // temp url의 data를 cachedImageFileURL에 저장
-                try? FileManager.default.copyItem(at: url, to: cachedImageFileURL)
-                try? FileManager.default.removeItem(at: url)
-                completion(.success(data))
-            }.resume()
-        }
+        URLSession.shared.downloadTask(with: URLRequest) { (url, _, error) in
+            if error != nil { completion(.failure(.InvalidURL)) }
+            guard let url = url else { completion(.failure(.InvalidURL)); return }
+            guard let data = try? Data(contentsOf: url) else { completion(.failure(.InvalidURL)); return }
+            
+            // temp url의 data를 cachedImageFileURL에 저장
+            if let cachedImageFileURL = cachedImageFileURL {
+                try? FileManager.default.moveItem(at: url, to: cachedImageFileURL)
+            }
+            
+            completion(.success(data))
+        }.resume()
     }
 }

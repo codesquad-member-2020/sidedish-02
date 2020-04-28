@@ -108,17 +108,27 @@ extension SideDishProductsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
         let product = productsList[indexPath.section][indexPath.row]
         
-        networkManager.fetchImage(from: product.imageURL) { (result) in
-            switch result {
-            case .success(let data):
-                let image = UIImage(data: data)
-                DispatchQueue.main.async {
-                    cell.configureProductImage(image)
+        let url = URL(string: product.imageURL)!
+        let cachedImageFileURL = try! FileManager.default
+            .url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(url.lastPathComponent)
+        
+        if let cachedData = try? Data(contentsOf: cachedImageFileURL) {
+            let image = UIImage(data: cachedData)
+            cell.configureProductImage(image)
+        } else {
+            networkManager.fetchImage(from: product.imageURL, cachedImageFileURL: cachedImageFileURL) { (result) in
+                switch result {
+                case .success(let data):
+                    let image = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        cell.configureProductImage(image)
+                    }
+                case .failure(_):
+                    break
                 }
-            case .failure(_):
-                break
             }
         }
+        
         cell.configureProductCell(with: product)
         return cell
     }
