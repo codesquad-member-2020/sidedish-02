@@ -176,8 +176,8 @@
                                                 <color key="textColor" name="subtitle-gray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFu-Sf-wT3" userLabel="priceLabelsStackView" customClass="PriceLabelsStackView" customModule="SideDishApp" customModuleProvider="target">
-                                                <rect key="frame" x="156" y="497.5" width="102" height="20.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="GFu-Sf-wT3" userLabel="priceLabelsStackView" customClass="PriceLabelsStackView" customModule="SideDishApp" customModuleProvider="target">
+                                                <rect key="frame" x="154" y="497.5" width="106" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvk-9T-IrV">
                                                         <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
@@ -186,7 +186,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7,000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbA-FM-L3p">
-                                                        <rect key="frame" x="45" y="0.0" width="57" height="20.5"/>
+                                                        <rect key="frame" x="49" y="0.0" width="57" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
