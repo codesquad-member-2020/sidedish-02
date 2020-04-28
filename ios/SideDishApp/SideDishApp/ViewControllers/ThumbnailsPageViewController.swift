@@ -15,8 +15,8 @@ class ThumbnailsPageViewController: UIPageViewController {
     private var imageURLs: [String]! {
         didSet {
             imageURLs.forEach { (_) in
-                let vc = ThumbnailViewController()
-                thumbnailViewControllers.append(vc)
+                let thumbnailViewController = ThumbnailViewController()
+                thumbnailViewControllers.append(thumbnailViewController)
             }
             setViewControllers([thumbnailViewControllers.first!], direction: .forward, animated: false)
         }
