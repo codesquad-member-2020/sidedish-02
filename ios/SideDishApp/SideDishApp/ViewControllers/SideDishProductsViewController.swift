@@ -150,6 +150,20 @@ extension SideDishProductsViewController: UITableViewDelegate {
             DispatchQueue.main.async {
                 detailViewController.configureDetailViewController(title: product.title, with: detail)
             }
+            
+            detail.thumbnailImageURLs.enumerated().forEach { (index, url) in
+                self.networkManager.fetchImage(from: url) { (result) in
+                    switch result {
+                    case .success(let data):
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            detailViewController.updateThumbnailImage(at: index, image: image)
+                        }
+                    case .failure(_):
+                        break
+                    }
+                }
+            }
         }
         navigationController?.pushViewController(detailViewController, animated: true)
     }

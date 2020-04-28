@@ -25,6 +25,10 @@ class ThumbnailViewController: UIViewController {
         configureImageView()
     }
     
+    func updateImage(_ image: UIImage?) {
+        self.imageView.image = image
+    }
+    
     private func configureImageView() {
         view.addSubview(imageView)
         imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true

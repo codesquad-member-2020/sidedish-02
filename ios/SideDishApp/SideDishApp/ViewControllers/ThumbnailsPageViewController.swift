@@ -37,6 +37,11 @@ class ThumbnailsPageViewController: UIPageViewController {
         configureUI()
     }
     
+    func updateThumbnailImage(at index: Int, image: UIImage?) {
+        let thumbnailViewController = thumbnailViewControllers[index]
+        thumbnailViewController.updateImage(image)
+    }
+    
     private func configureUI() {
         view.backgroundColor = .clear
     }

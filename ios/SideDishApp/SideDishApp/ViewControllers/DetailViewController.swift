@@ -58,6 +58,10 @@ class DetailViewController: UIViewController {
         deliveryInfoLabel.text = detail.deliveryInfo
     }
     
+    func updateThumbnailImage(at index: Int, image: UIImage?) {
+        thumbnailPageViewController.updateThumbnailImage(at: index, image: image)
+    }
+    
     private func configureGradientBackgroundView() {
         let gradientLayer = CAGradientLayer()
         gradientLayerContainerView.backgroundColor = .clear
