@@ -15,17 +15,17 @@ protocol ProductHeaderViewDelegate {
 class ProductHeaderView: UITableViewHeaderFooterView {
 
     static let reuseIdentifier: String = String(describing: self)
-    static let height: CGFloat = 80
+    static let height: CGFloat = 68
     
     private let categoryNameFontSize: CGFloat = 13
-    private let categoryDescriptionFontSize: CGFloat = 19
+    private let categoryDescriptionFontSize: CGFloat = 17
     private let borderWidth: CGFloat = 1
     private let categoryNameColor: UIColor? = UIColor(named: "subtitle-gray")
     private let headerViewBackgroundColor: UIColor? = UIColor(named: "headerview-bg")
     private let descriptionTextColor: UIColor? = UIColor(named: "black")
     private let shadowColor: UIColor? = UIColor(named: "header-shadow")
-    private let nameToDescriptionConstant: CGFloat = 12
-    private let descriptionToBottomConstant: CGFloat = 8
+    private let nameToDescriptionConstant: CGFloat = 10
+    private let descriptionToBottomConstant: CGFloat = 6
     
     lazy var categoryNameLabel: CategoryLabel = {
         let label = CategoryLabel()
@@ -82,10 +82,10 @@ class ProductHeaderView: UITableViewHeaderFooterView {
     }
     
     private func configureShadow() {
-        layer.shadowOpacity = 0.3
+        layer.shadowOpacity = 0.2
         layer.shadowColor = shadowColor?.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 3)
-        layer.shadowRadius = 3
+        layer.shadowRadius = 2
     }
     
     private func configureTapRecognizer() {
