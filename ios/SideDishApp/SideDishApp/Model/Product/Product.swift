@@ -18,11 +18,8 @@ struct Product: Decodable {
     let badges: [String]?
     
     enum CodingKeys: String, CodingKey {
-        case detailHash = "detail_hash"
+        case detailHash = "id"
         case imageURL = "image"
-        case title, description
-        case originalPrice = "n_price"
-        case finalPrice = "s_price"
-        case badges = "badge"
+        case title, description, originalPrice, finalPrice, badges
     }
 }

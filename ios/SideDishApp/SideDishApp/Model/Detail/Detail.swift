@@ -13,19 +13,17 @@ struct Detail: Decodable {
     let thumbnailImageURLs: [String]
     let title: String?
     let description: String
-    let prices: [String]
+    let originalPrice: String
+    let finalPrice: String
     let point: String
     let deliveryInfo: String
     let deliveryFee: String
     let detailImageURLs: [String]
     
     enum CodingKeys: String, CodingKey {
-        case thumbnailImageURLs = "thumb_images"
-        case title
-        case description = "product_description"
-        case prices, point
-        case deliveryInfo = "delivery_info"
-        case deliveryFee = "delivery_fee"
-        case detailImageURLs = "detail_section"
+        case thumbnailImageURLs = "thumbImages"
+        case title, description
+        case originalPrice, finalPrice, point, deliveryInfo, deliveryFee
+        case detailImageURLs = "detailImages"
     }
 }

@@ -16,11 +16,7 @@ class SideDishProductsViewController: UIViewController {
     private let navigationTitle = "반찬 코너"
     private let defaultBackgroundColor: UIColor? = UIColor(named: "default-bg")
     
-    let categories = [
-        Category(name: "메인반찬", description: "한그릇 뚝딱 메인 요리", path: "main"),
-        Category(name: "국・찌개", description: "김이 모락모락 국・찌개", path: "soup"),
-        Category(name: "밑반찬", description: "언제 먹어도 든든한 밑반찬", path: "side")
-    ]
+    var categories = [Category]()
     
     lazy var productsList = Array<Products>.init(repeating: Products(), count: categories.count)
     
@@ -36,15 +32,28 @@ class SideDishProductsViewController: UIViewController {
     }
     
     private func fetchCategories() {
-        categories.enumerated().forEach { (section, category) in
-            fetchProducts(at: section, of: category)
+        networkManager.getResource(from: NetworkManager.EndPoints.Categories, type: [Category].self) { (categories, error) in
+            if error != nil {
+                DispatchQueue.main.async {
+                    Toast(text: "네트워크 에러로 데이터를 불러올 수 없습니다.", delay: 0, duration: 3).show()
+                }
+                return
+            }
+            guard let categories = categories else { return }
+            self.categories = categories
+            self.tableView.reloadData()
+            self.categories.enumerated().forEach { (section, category) in
+                self.fetchProducts(at: section, of: category)
+            }
         }
     }
     
     private func fetchProducts(at section: Int, of category: Category) {
         networkManager.getResource(from: NetworkManager.EndPoints.SideDishes, path: category.path, type: ProductList.self) { (productList, error) in
             if error != nil {
-                Toast(text: "네트워크 에러로 데이터를 불러올 수 없습니다.", delay: 0, duration: 3).show()
+                DispatchQueue.main.async {
+                    Toast(text: "네트워크 에러로 데이터를 불러올 수 없습니다.", delay: 0, duration: 3).show()
+                }
                 return
             }
             guard let productList = productList else { return }
@@ -144,9 +153,8 @@ extension SideDishProductsViewController: UITableViewDelegate {
         let detailViewController = storyboard?.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
         let product = productsList[indexPath.section][indexPath.row]
         let detailHash = product.detailHash
-        networkManager.getResource(from: NetworkManager.EndPoints.Detail, path: detailHash, type: DetailContainer.self) { (detailContainer, error) in
-            guard let detailContainer = detailContainer else { return }
-            let detail = detailContainer.data
+        networkManager.getResource(from: NetworkManager.EndPoints.Detail, path: detailHash, type: Detail.self) { (detail, error) in
+            guard let detail = detail else { return }
             DispatchQueue.main.async {
                 detailViewController.configureDetailViewController(title: product.title, with: detail)
             }
