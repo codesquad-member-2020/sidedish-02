@@ -13,6 +13,12 @@ const App = () => {
   const [viewAll, setViewAll] = useState(false);
 
   const fetchInitialData = async () => {
+    // const initialSideDishData = await fetchJSON(URL.PROD.SIDE_DISH_API);
+    // setSideDish(initialSideDishData.banchan);
+    // const initialMainDishData = await fetchJSON(URL.PROD.MAIN_DISH_API);
+    // setMainDish(initialMainDishData.banchan);
+    // const initialSoupData = await fetchJSON(URL.PROD.SOUP_API);
+    // setSoup(initialSoupData.banchan);
     const initialSideDishData = await fetchJSON(URL.MOCK.SIDE_DISH_API);
     setSideDish(initialSideDishData.body);
     const initialMainDishData = await fetchJSON(URL.MOCK.MAIN_DISH_API);
@@ -45,7 +51,7 @@ const App = () => {
         <DishWrap dishes={soup} category='국&middot;찌개' description='김이 모락모락' bold='국, 찌개' />
       </section>
 
-      <button className="dish-view-all" onClick={clickViewAll}>{viewAll ? '∧' : '∨'}</button>
+      <button className="dish-view-all" onClick={clickViewAll}>{viewAll ? '∧&and;' : '∨'}</button>
     </>
   );
 }
