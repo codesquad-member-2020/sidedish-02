@@ -151,6 +151,7 @@ extension SideDishProductsViewController: UITableViewDelegate {
                 detailViewController.configureDetailViewController(title: product.title, with: detail)
             }
             
+            // 썸네일 이미지 네트워크 요청 및 업데이트
             detail.thumbnailImageURLs.enumerated().forEach { (index, url) in
                 self.networkManager.fetchImage(from: url) { (result) in
                     switch result {
