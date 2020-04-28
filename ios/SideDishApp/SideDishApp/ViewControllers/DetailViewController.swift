@@ -47,6 +47,7 @@ class DetailViewController: UIViewController {
     
     private func configureScrollView() {
         scrollView.delegate = self
+        scrollView.showsVerticalScrollIndicator = false
     }
     
     private func configureThumbnailPageViewController() {
