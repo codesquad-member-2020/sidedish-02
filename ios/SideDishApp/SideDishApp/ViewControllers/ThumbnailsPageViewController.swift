@@ -34,6 +34,7 @@ class ThumbnailsPageViewController: UIPageViewController {
         super.viewDidLoad()
 
         dataSource = self
+        delegate = self
         configureUI()
     }
     
@@ -67,5 +68,20 @@ extension ThumbnailsPageViewController: UIPageViewControllerDataSource {
             return thumbnailViewControllers[0]
         }
         return thumbnailViewControllers[index + 1]
+    }
+}
+
+extension ThumbnailsPageViewController: UIPageViewControllerDelegate {
+    
+    static let IndexChangedNotification = Notification.Name(rawValue: "IndexChangedNotification")
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard completed else { return }
+        let index = thumbnailViewControllers.firstIndex(where: { $0 == pageViewController.viewControllers?.first }) ?? 0
+        postNotification(index: index)
+    }
+    
+    private func postNotification(index: Int) {
+        NotificationCenter.default.post(name: Self.IndexChangedNotification, object: nil, userInfo: ["index": index])
     }
 }

@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var deliveryFeeLabel: UILabel!
     @IBOutlet weak var deliveryInfoLabel: UILabel!
     @IBOutlet weak var detailImagesStackView: DetailImagesStackView!
-    
+    private var imageIndexStackView = ImageIndexStackView()
     @IBOutlet weak var gradientLayerContainerView: UIView!
     
     let thumbnailPageViewController = ThumbnailsPageViewController()
@@ -38,11 +38,26 @@ class DetailViewController: UIViewController {
         configureScrollView()
     }
     
+    private func configureImageIndexStackView() {
+        scrollView.addSubview(imageIndexStackView)
+        imageIndexStackView.translatesAutoresizingMaskIntoConstraints = false
+        imageIndexStackView.bottomAnchor.constraint(equalTo: thumbnailPageViewController.view!.bottomAnchor, constant: -12).isActive = true
+        let indexStackLeading = imageIndexStackView.leadingAnchor.constraint(equalTo: thumbnailPageViewController.view!.leadingAnchor)
+        indexStackLeading.isActive = true
+        indexStackLeading.priority = .defaultLow
+        let indexStackTrailing = imageIndexStackView.trailingAnchor.constraint(equalTo: thumbnailPageViewController.view!.trailingAnchor)
+        indexStackTrailing.isActive = true
+        indexStackTrailing.priority = .defaultLow
+        imageIndexStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        imageIndexStackView.heightAnchor.constraint(equalToConstant: ImageIndexStackView.indexWidth).isActive = true
+    }
+        
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         let thumbnailPageView = thumbnailPageViewController.view!
         thumbnailPageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width)
+        configureImageIndexStackView()
     }
     
     private func configureScrollView() {
@@ -57,6 +72,7 @@ class DetailViewController: UIViewController {
     
     func configureDetailViewController(title: String, with detail: Detail) {
         thumbnailPageViewController.configureImageURLs(detail.thumbnailImageURLs)
+        imageIndexStackView.configureSubViews(count: detail.thumbnailImageURLs.count)
         titleLabel.text = title
         descriptionLabel.text = detail.description
         pointLabel.text = detail.point
