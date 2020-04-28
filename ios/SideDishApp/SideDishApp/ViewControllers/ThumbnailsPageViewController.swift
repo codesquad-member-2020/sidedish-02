@@ -55,13 +55,17 @@ extension ThumbnailsPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let index = thumbnailViewControllers.firstIndex(where: { $0 == viewController }) ?? 0
-        if index == 0 { return nil }
+        if index == 0 {
+            return thumbnailViewControllers[thumbnailViewControllers.count - 1]
+        }
         return thumbnailViewControllers[index - 1]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let index = thumbnailViewControllers.firstIndex(where: { $0 == viewController }) ?? 0
-        if index == thumbnailViewControllers.count - 1 { return nil }
+        if index == thumbnailViewControllers.count - 1 {
+            return thumbnailViewControllers[0]
+        }
         return thumbnailViewControllers[index + 1]
     }
 }
