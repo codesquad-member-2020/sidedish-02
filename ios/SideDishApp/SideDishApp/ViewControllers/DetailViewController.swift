@@ -35,6 +35,7 @@ class DetailViewController: UIViewController {
         configureThumbnailPageViewController()
         configureNavigationBar()
         configureGradientBackgroundView()
+        configureScrollViewDelegate()
     }
     
     override func viewWillLayoutSubviews() {
@@ -42,6 +43,10 @@ class DetailViewController: UIViewController {
         
         let thumbnailPageView = thumbnailPageViewController.view!
         thumbnailPageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width)
+    }
+    
+    private func configureScrollViewDelegate() {
+        scrollView.delegate = self
     }
     
     private func configureThumbnailPageViewController() {
@@ -89,5 +94,16 @@ class DetailViewController: UIViewController {
     
     @objc private func handleBack() {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension DetailViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        guard offsetY < 0 else { return }
+        let pageView = thumbnailPageViewController.view!
+        let width = self.view.frame.width + (-offsetY)
+        pageView.frame = .init(x: offsetY / 2, y: offsetY, width: width, height: width)
     }
 }
