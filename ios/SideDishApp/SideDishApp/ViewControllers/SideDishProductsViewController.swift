@@ -165,6 +165,21 @@ extension SideDishProductsViewController: UITableViewDelegate {
                     }
                 }
             }
+            
+            // 상세 이미지 네트워크 요청 및 업데이트
+            detail.detailImageURLs.enumerated().forEach { (index, url) in
+                self.networkManager.fetchImage(from: url) { (result) in
+                    switch result {
+                    case .success(let data):
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            detailViewController.updateDetailImagesStackView(at: index, image: image)
+                        }
+                    case .failure(_):
+                        break
+                    }
+                }
+            }
         }
         navigationController?.pushViewController(detailViewController, animated: true)
     }
