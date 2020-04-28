@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var priceLabelsStackView: UIStackView!
+    @IBOutlet weak var priceLabelsStackView: PriceLabelsStackView!
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var deliveryFeeLabel: UILabel!
     @IBOutlet weak var deliveryInfoLabel: UILabel!
@@ -56,6 +56,7 @@ class DetailViewController: UIViewController {
         pointLabel.text = detail.point
         deliveryFeeLabel.text = detail.deliveryFee
         deliveryInfoLabel.text = detail.deliveryInfo
+        priceLabelsStackView.configurePriceLabels(originalPrice: detail.originalPrice, finalPrice: detail.finalPrice)
         detailImagesStackView.configureImageViews(count: detail.detailImageURLs.count)
     }
     
