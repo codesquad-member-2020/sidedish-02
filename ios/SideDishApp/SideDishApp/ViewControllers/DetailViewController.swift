@@ -12,7 +12,18 @@ class DetailViewController: UIViewController {
 
     static let identifier = "DetailViewController"
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var priceLabelsStackView: UIStackView!
+    @IBOutlet weak var pointLabel: UILabel!
+    @IBOutlet weak var deliveryFeeLabel: UILabel!
+    @IBOutlet weak var deliveryInfoLabel: UILabel!
+    @IBOutlet weak var detailImagesStackView: DetailImagesStackView!
+    
     @IBOutlet weak var gradientLayerContainerView: UIView!
+    
+    let thumbnailPageViewController = ThumbnailsPageViewController()
     
     private let backButtonColor: UIColor? = UIColor(named: "darkGray-white")
     private let defaultBackgroundColor: UIColor? = UIColor(named: "default-bg")
@@ -21,8 +32,39 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureThumbnailPageViewController()
         configureNavigationBar()
         configureGradientBackgroundView()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        let thumbnailPageView = thumbnailPageViewController.view!
+        thumbnailPageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width)
+    }
+    
+    private func configureThumbnailPageViewController() {
+        let thumbnailPageView = thumbnailPageViewController.view!
+        scrollView.addSubview(thumbnailPageView)
+    }
+    
+    func configureDetailViewController(title: String, with detail: Detail) {
+        thumbnailPageViewController.configureImageURLs(detail.thumbnailImageURLs)
+        titleLabel.text = title
+        descriptionLabel.text = detail.description
+        pointLabel.text = detail.point
+        deliveryFeeLabel.text = detail.deliveryFee
+        deliveryInfoLabel.text = detail.deliveryInfo
+        detailImagesStackView.configureImageViews(count: detail.detailImageURLs.count)
+    }
+    
+    func updateThumbnailImage(at index: Int, image: UIImage?) {
+        thumbnailPageViewController.updateThumbnailImage(at: index, image: image)
+    }
+    
+    func updateDetailImagesStackView(at index: Int, image: UIImage?) {
+        detailImagesStackView.updateDetailImages(at: index, image: image)
     }
     
     private func configureGradientBackgroundView() {

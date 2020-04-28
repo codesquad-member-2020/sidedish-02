@@ -108,17 +108,27 @@ extension SideDishProductsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
         let product = productsList[indexPath.section][indexPath.row]
         
-        networkManager.fetchImage(from: product.imageURL) { (result) in
-            switch result {
-            case .success(let data):
-                let image = UIImage(data: data)
-                DispatchQueue.main.async {
-                    cell.configureProductImage(image)
+        let url = URL(string: product.imageURL)!
+        let cachedImageFileURL = try! FileManager.default
+            .url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(url.lastPathComponent)
+        
+        if let cachedData = try? Data(contentsOf: cachedImageFileURL) {
+            let image = UIImage(data: cachedData)
+            cell.configureProductImage(image)
+        } else {
+            networkManager.fetchImage(from: product.imageURL, cachedImageFileURL: cachedImageFileURL) { (result) in
+                switch result {
+                case .success(let data):
+                    let image = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        cell.configureProductImage(image)
+                    }
+                case .failure(_):
+                    break
                 }
-            case .failure(_):
-                break
             }
         }
+        
         cell.configureProductCell(with: product)
         return cell
     }
@@ -131,7 +141,46 @@ extension SideDishProductsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewController = storyboard?.instantiateViewController(identifier: DetailViewController.identifier)
-        navigationController?.pushViewController(detailViewController!, animated: true)
+        let detailViewController = storyboard?.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
+        let product = productsList[indexPath.section][indexPath.row]
+        let detailHash = product.detailHash
+        networkManager.getResource(from: NetworkManager.EndPoints.Detail, path: detailHash, type: DetailContainer.self) { (detailContainer, error) in
+            guard let detailContainer = detailContainer else { return }
+            let detail = detailContainer.data
+            DispatchQueue.main.async {
+                detailViewController.configureDetailViewController(title: product.title, with: detail)
+            }
+            
+            // 썸네일 이미지 네트워크 요청 및 업데이트
+            detail.thumbnailImageURLs.enumerated().forEach { (index, url) in
+                self.networkManager.fetchImage(from: url) { (result) in
+                    switch result {
+                    case .success(let data):
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            detailViewController.updateThumbnailImage(at: index, image: image)
+                        }
+                    case .failure(_):
+                        break
+                    }
+                }
+            }
+            
+            // 상세 이미지 네트워크 요청 및 업데이트
+            detail.detailImageURLs.enumerated().forEach { (index, url) in
+                self.networkManager.fetchImage(from: url) { (result) in
+                    switch result {
+                    case .success(let data):
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            detailViewController.updateDetailImagesStackView(at: index, image: image)
+                        }
+                    case .failure(_):
+                        break
+                    }
+                }
+            }
+        }
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
