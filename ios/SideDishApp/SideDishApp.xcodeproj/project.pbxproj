@@ -34,7 +34,6 @@
 		38E0AF652452FB5900A26CB3 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0AF642452FB5900A26CB3 /* Products.swift */; };
 		38E0AF672452FB7700A26CB3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0AF662452FB7700A26CB3 /* Category.swift */; };
 		38E0AF692452FBE600A26CB3 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0AF682452FBE600A26CB3 /* ProductList.swift */; };
-		38E2FCD12456F4B700817780 /* DetailContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2FCD02456F4B700817780 /* DetailContainer.swift */; };
 		38E2FCD32456F4E300817780 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2FCD22456F4E300817780 /* Detail.swift */; };
 		38E2FCD52457456400817780 /* ThumbnailsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2FCD42457456400817780 /* ThumbnailsPageViewController.swift */; };
 /* End PBXBuildFile section */
@@ -70,7 +69,6 @@
 		38E0AF642452FB5900A26CB3 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		38E0AF662452FB7700A26CB3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		38E0AF682452FBE600A26CB3 /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
-		38E2FCD02456F4B700817780 /* DetailContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContainer.swift; sourceTree = "<group>"; };
 		38E2FCD22456F4E300817780 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		38E2FCD42457456400817780 /* ThumbnailsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailsPageViewController.swift; sourceTree = "<group>"; };
 		F73413738BBF5BACBA69C851 /* Pods_SideDishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SideDishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,7 +223,6 @@
 		38E2FCCF2456F49E00817780 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				38E2FCD02456F4B700817780 /* DetailContainer.swift */,
 				38E2FCD22456F4E300817780 /* Detail.swift */,
 			);
 			path = Detail;
@@ -376,7 +373,6 @@
 				38BB4B072458102300B86451 /* DetailImagesStackView.swift in Sources */,
 				3868CC61245039F6008DEC81 /* BadgeLabelsStackView.swift in Sources */,
 				3868CC5F24501BAF008DEC81 /* BadgeLabel.swift in Sources */,
-				38E2FCD12456F4B700817780 /* DetailContainer.swift in Sources */,
 				385E343A2452016B00931F8B /* NetworkManager.swift in Sources */,
 				38E0AF672452FB7700A26CB3 /* Category.swift in Sources */,
 				38E0AF632452FB4300A26CB3 /* Product.swift in Sources */,

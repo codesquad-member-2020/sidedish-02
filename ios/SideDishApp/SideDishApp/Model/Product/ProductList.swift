@@ -12,6 +12,6 @@ struct ProductList: Decodable {
     let products: [Product]
     
     enum CodingKeys: String, CodingKey {
-        case products = "body"
+        case products = "banchan"
     }
 }

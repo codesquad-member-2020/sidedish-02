@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var priceLabelsStackView: UIStackView!
+    @IBOutlet weak var priceLabelsStackView: PriceLabelsStackView!
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var deliveryFeeLabel: UILabel!
     @IBOutlet weak var deliveryInfoLabel: UILabel!
@@ -35,6 +35,7 @@ class DetailViewController: UIViewController {
         configureThumbnailPageViewController()
         configureNavigationBar()
         configureGradientBackgroundView()
+        configureScrollView()
     }
     
     override func viewWillLayoutSubviews() {
@@ -42,6 +43,11 @@ class DetailViewController: UIViewController {
         
         let thumbnailPageView = thumbnailPageViewController.view!
         thumbnailPageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width)
+    }
+    
+    private func configureScrollView() {
+        scrollView.delegate = self
+        scrollView.showsVerticalScrollIndicator = false
     }
     
     private func configureThumbnailPageViewController() {
@@ -56,6 +62,7 @@ class DetailViewController: UIViewController {
         pointLabel.text = detail.point
         deliveryFeeLabel.text = detail.deliveryFee
         deliveryInfoLabel.text = detail.deliveryInfo
+        priceLabelsStackView.configurePriceLabels(originalPrice: detail.originalPrice, finalPrice: detail.finalPrice)
         detailImagesStackView.configureImageViews(count: detail.detailImageURLs.count)
     }
     
@@ -88,5 +95,16 @@ class DetailViewController: UIViewController {
     
     @objc private func handleBack() {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension DetailViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        guard offsetY < 0 else { return }
+        let pageView = thumbnailPageViewController.view!
+        let width = self.view.frame.width + (-offsetY)
+        pageView.frame = .init(x: offsetY / 2, y: offsetY, width: width, height: width)
     }
 }

@@ -17,8 +17,9 @@ enum NetworkErrorCase : Error {
 class NetworkManager {
     
     enum EndPoints {
-        static let SideDishes = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan"
-        static let Detail = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/detail"
+        static let Categories = "http://13.125.185.168:8080/categories"
+        static let SideDishes = "http://13.125.185.168:8080/categories"
+        static let Detail = "http://13.125.185.168:8080/banchan"
     }
     
     func getResource<T: Decodable>(from: String, path: String = "", type: T.Type, completion: @escaping (T?, Error?) -> ()) {
