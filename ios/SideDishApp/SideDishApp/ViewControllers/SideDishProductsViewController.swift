@@ -41,7 +41,9 @@ class SideDishProductsViewController: UIViewController {
             }
             guard let categories = categories else { return }
             self.categories = categories
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
             self.categories.enumerated().forEach { (section, category) in
                 self.fetchProducts(at: section, of: category)
             }
