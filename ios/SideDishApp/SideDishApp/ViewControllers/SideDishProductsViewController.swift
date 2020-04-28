@@ -84,6 +84,7 @@ class SideDishProductsViewController: UIViewController {
         tableView.delegate = self
         
         tableView.register(ProductHeaderView.self, forHeaderFooterViewReuseIdentifier: ProductHeaderView.reuseIdentifier)
+        tableView.showsVerticalScrollIndicator = false
     }
 }
 
