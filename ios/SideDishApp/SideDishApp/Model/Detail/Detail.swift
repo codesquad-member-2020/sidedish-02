@@ -13,7 +13,7 @@ struct Detail: Decodable {
     let thumbnailImageURLs: [String]
     let title: String?
     let description: String
-    let originalPrice: String
+    let originalPrice: String?
     let finalPrice: String
     let point: String
     let deliveryInfo: String
