@@ -31,6 +31,7 @@ const DishList = ({ dishes }) => {
     const dishList = dishes.map((dish) =>
         <>
             <div className="item" id={dish.detail_hash}>
+                {/* {console.log(targetId)} */}
                 {/* {targetId ? <DishDetail targetId={targetId} /> : null} */}
                 {/* <DishDetail targetId={targetId} /> */}
                 <div className="item-image_box">
