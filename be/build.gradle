@@ -9,6 +9,10 @@ group = 'io.codesquad.group2'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+bootWar {
+	archiveFileName = 'ROOT.war'
+}
+
 repositories {
 	mavenCentral()
 }
@@ -24,6 +28,7 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test:2.2.6.RELEASE') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 }
 
 test {
