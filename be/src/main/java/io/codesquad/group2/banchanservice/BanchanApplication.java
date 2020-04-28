@@ -1,8 +1,7 @@
-package io.codesquad.group2.banchan;
+package io.codesquad.group2.banchanservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 public class BanchanApplication {

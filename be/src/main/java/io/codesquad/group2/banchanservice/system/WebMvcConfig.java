@@ -1,4 +1,4 @@
-package io.codesquad.group2.banchan.system;
+package io.codesquad.group2.banchanservice.system;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
