@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
         configureThumbnailPageViewController()
         configureNavigationBar()
         configureGradientBackgroundView()
-        configureScrollViewDelegate()
+        configureScrollView()
     }
     
     override func viewWillLayoutSubviews() {
@@ -45,7 +45,7 @@ class DetailViewController: UIViewController {
         thumbnailPageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width)
     }
     
-    private func configureScrollViewDelegate() {
+    private func configureScrollView() {
         scrollView.delegate = self
     }
     
