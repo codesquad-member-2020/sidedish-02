@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ModalPortal from '../ModalPortal';
 import Slider from "react-slick";
 import DishDetail from './DishDetail';
@@ -7,29 +7,28 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const DishList = ({ dishes }) => {
-    const DISH = (dish) => NAME(dish).MOCK;
+    const DISH = (dish) => NAME(dish).PROD;
 
-    const [targetId, setTargetId] = useState("HBDEF");
+    // const [targetId, setTargetId] = useState("HBDEF");
     const [viewDetail, setViewDetail] = useState(false);
 
-    const cviewDetail = (e) => {
-        const targetId = e.target.closest("li").id;
-        console.log(targetId);
-        setTargetId(targetId);
-        // DishDetail(targetId);
-    }
+    // const cviewDetail = (e) => {
+    //     const targetId = e.target.closest("li").id;
+    //     console.log(targetId);
+    //     setTargetId(targetId);
+    //     // DishDetail(targetId);
+    // }
 
     const openViewDetail = () => {
         setViewDetail(true);
     }
 
     const closeViewDetail = () => {
-        console.log('close!!');
         setViewDetail(false);
     }
 
     const configureBadges = (dish) => {
-        return DISH(dish).BADGES ? dish.badge.map(badge => <span className="item-badge">{badge}</span>) : null
+        return DISH(dish).BADGES ? DISH(dish).BADGES.map(badge => <span className="item-badge">{badge}</span>) : null
     }
 
     const settings = {
@@ -43,11 +42,12 @@ const DishList = ({ dishes }) => {
 
     const dishList = dishes.map((dish) =>
         <>
-            <div className="item" id={DISH(dish).ID} onClick={openViewDetail}>
+            <div className="item" id={DISH(dish).ID} onClickCapture={openViewDetail, DISH(dish).ID}>
                 {viewDetail && (
-                    <ModalPortal>
+                    <ModalPortal>m
                         {/* {targetId ? <DishDetail targetId={targetId} /> : null} */}
-                        <DishDetail targetId={targetId} onClose={closeViewDetail} />
+                        <DishDetail targetId={DISH(dish).ID} isOpen={viewDetail} onClose={closeViewDetail} />
+                        {/* {setViewDetail(false)} */}
                     </ModalPortal>
                 )}
                 <div className="item-image_box">

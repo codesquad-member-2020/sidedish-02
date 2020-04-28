@@ -257,7 +257,7 @@ code {
   display: flex;
   justify-content: space-between;
   width: 794px;
-  position: absolute;
+  position: fixed;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -309,12 +309,18 @@ code {
 .detail-popup .description_title {
   color: #a7a5a7;
   width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .detail-popup .description {
   color: #636263;
   width: 351px;
   line-height: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .detail-popup .item-price {
