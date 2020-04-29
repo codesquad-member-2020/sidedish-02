@@ -10,11 +10,22 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var signInGitHubButton: UIButton!
+    
     static let identifier: String = "SignInViewController"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureButton()
+    }
+    
+    private func configureButton() {
+        signInGitHubButton.layer.cornerRadius = 8
+    }
+    
+    @IBAction func signInGitHubButtonTapped(_ sender: Any) {
         
     }
 }
+

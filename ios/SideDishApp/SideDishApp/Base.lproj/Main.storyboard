@@ -158,15 +158,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signin-bg-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gi9-1c-4cC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signin-bg-2" translatesAutoresizingMaskIntoConstraints="NO" id="Gi9-1c-4cC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74e-0d-PFZ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.09378965736040612" green="0.09378965736040612" blue="0.09378965736040612" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반찬이 필요하 때는" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDF-xt-S9q">
+                                <rect key="frame" x="48" y="132" width="318" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바른찬" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHK-eT-FlT">
+                                <rect key="frame" x="48" y="162" width="318" height="87.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="73"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAo-yH-eaS">
-                                <rect key="frame" x="24" y="684" width="366" height="48"/>
+                                <rect key="frame" x="28" y="684" width="358" height="48"/>
                                 <color key="backgroundColor" red="0.089823921319796995" green="0.089823921319796995" blue="0.089823921319796995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Ldo-hs-d8P"/>
@@ -175,17 +187,20 @@
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInGitHubButtonTapped:" destination="Mwq-hE-7aq" eventType="touchUpInside" id="ZwL-GY-1aV"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github.icon" translatesAutoresizingMaskIntoConstraints="NO" id="dih-W9-uUI">
-                                <rect key="frame" x="109" y="696" width="24" height="24"/>
+                                <rect key="frame" x="117" y="698" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="WgD-IK-Dde"/>
-                                    <constraint firstAttribute="width" constant="24" id="gNp-Dr-N4a"/>
+                                    <constraint firstAttribute="height" constant="20" id="WgD-IK-Dde"/>
+                                    <constraint firstAttribute="width" constant="20" id="gNp-Dr-N4a"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with GitHub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5U-S7-JnM">
-                                <rect key="frame" x="141" y="698" width="156.5" height="20"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="145" y="698" width="148.5" height="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -194,22 +209,32 @@
                         <constraints>
                             <constraint firstItem="74e-0d-PFZ" firstAttribute="trailing" secondItem="hAr-2F-FaA" secondAttribute="trailing" id="0II-NC-D2a"/>
                             <constraint firstItem="Gi9-1c-4cC" firstAttribute="leading" secondItem="hAr-2F-FaA" secondAttribute="leading" id="4jQ-DV-dlB"/>
+                            <constraint firstItem="hAr-2F-FaA" firstAttribute="trailing" secondItem="yDF-xt-S9q" secondAttribute="trailing" constant="48" id="6Q0-9n-O4H"/>
                             <constraint firstItem="G5U-S7-JnM" firstAttribute="centerX" secondItem="OAo-yH-eaS" secondAttribute="centerX" constant="12" id="6R3-kf-frQ"/>
+                            <constraint firstItem="mHK-eT-FlT" firstAttribute="top" secondItem="yDF-xt-S9q" secondAttribute="bottom" id="9a7-K1-4uD"/>
+                            <constraint firstItem="74e-0d-PFZ" firstAttribute="top" secondItem="usb-e7-g2S" secondAttribute="top" constant="20" symbolic="YES" id="Gzo-G0-ErO"/>
                             <constraint firstItem="Gi9-1c-4cC" firstAttribute="top" secondItem="usb-e7-g2S" secondAttribute="top" id="O2g-Vx-GoE"/>
                             <constraint firstItem="G5U-S7-JnM" firstAttribute="centerY" secondItem="OAo-yH-eaS" secondAttribute="centerY" id="Ojf-N9-hH5"/>
-                            <constraint firstItem="OAo-yH-eaS" firstAttribute="leading" secondItem="hAr-2F-FaA" secondAttribute="leading" constant="24" id="PCs-YN-PU0"/>
+                            <constraint firstItem="OAo-yH-eaS" firstAttribute="leading" secondItem="hAr-2F-FaA" secondAttribute="leading" constant="28" id="PCs-YN-PU0"/>
                             <constraint firstItem="74e-0d-PFZ" firstAttribute="top" secondItem="usb-e7-g2S" secondAttribute="top" id="S1y-UZ-6Zu"/>
                             <constraint firstItem="G5U-S7-JnM" firstAttribute="leading" secondItem="dih-W9-uUI" secondAttribute="trailing" constant="8" id="VAi-qa-PtF"/>
+                            <constraint firstItem="yDF-xt-S9q" firstAttribute="leading" secondItem="hAr-2F-FaA" secondAttribute="leading" constant="48" id="WAE-ML-t3W"/>
                             <constraint firstAttribute="bottom" secondItem="Gi9-1c-4cC" secondAttribute="bottom" id="XjQ-CM-tIX"/>
+                            <constraint firstItem="mHK-eT-FlT" firstAttribute="leading" secondItem="hAr-2F-FaA" secondAttribute="leading" constant="48" id="cf8-eg-dig"/>
                             <constraint firstItem="dih-W9-uUI" firstAttribute="centerY" secondItem="OAo-yH-eaS" secondAttribute="centerY" id="ecO-As-zbp"/>
                             <constraint firstItem="hAr-2F-FaA" firstAttribute="bottom" secondItem="OAo-yH-eaS" secondAttribute="bottom" constant="130" id="gtS-bO-LjK"/>
                             <constraint firstItem="74e-0d-PFZ" firstAttribute="leading" secondItem="usb-e7-g2S" secondAttribute="leading" id="gxZ-e2-soo"/>
                             <constraint firstAttribute="bottom" secondItem="74e-0d-PFZ" secondAttribute="bottom" id="hWc-wz-yZ2"/>
-                            <constraint firstItem="hAr-2F-FaA" firstAttribute="trailing" secondItem="OAo-yH-eaS" secondAttribute="trailing" constant="24" id="sWG-M8-M7g"/>
+                            <constraint firstItem="hAr-2F-FaA" firstAttribute="trailing" secondItem="OAo-yH-eaS" secondAttribute="trailing" constant="28" id="sWG-M8-M7g"/>
                             <constraint firstItem="Gi9-1c-4cC" firstAttribute="trailing" secondItem="hAr-2F-FaA" secondAttribute="trailing" id="wJb-Tr-0gT"/>
+                            <constraint firstItem="hAr-2F-FaA" firstAttribute="trailing" secondItem="mHK-eT-FlT" secondAttribute="trailing" constant="48" id="xEf-Ji-0pU"/>
+                            <constraint firstItem="yDF-xt-S9q" firstAttribute="top" secondItem="hAr-2F-FaA" secondAttribute="top" constant="88" id="xZL-FG-QLK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hAr-2F-FaA"/>
                     </view>
+                    <connections>
+                        <outlet property="signInGitHubButton" destination="OAo-yH-eaS" id="SG6-QQ-UF9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6JP-9Y-Hxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -479,7 +504,7 @@
     </scenes>
     <resources>
         <image name="github.icon" width="128" height="128"/>
-        <image name="signin-bg-1" width="1050" height="700"/>
+        <image name="signin-bg-2" width="1050" height="700.5"/>
         <namedColor name="badge-event">
             <color red="0.63200002908706665" green="0.46000000834465027" blue="0.72899997234344482" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
