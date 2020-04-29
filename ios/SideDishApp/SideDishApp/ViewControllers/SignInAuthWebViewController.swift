@@ -9,9 +9,15 @@
 import UIKit
 import WebKit
 
+protocol SignInAuthWebViewControllerDelegate {
+    func didFinishToSignInWithGitHub()
+}
+
 class SignInAuthWebViewController: UIViewController {
     
     let webView = WKWebView()
+    
+    var delegate: SignInAuthWebViewControllerDelegate?
     
     private let signInSuccessStatusCode: Int = 200
 
@@ -46,7 +52,9 @@ extension SignInAuthWebViewController: WKNavigationDelegate {
         if navigationResponse.response is HTTPURLResponse {
             let response = navigationResponse.response as! HTTPURLResponse
             if response.statusCode == signInSuccessStatusCode {
-                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: {
+                    self.delegate?.didFinishToSignInWithGitHub()
+                })
             }
         }
         decisionHandler(.allow)

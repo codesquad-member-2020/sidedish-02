@@ -26,7 +26,15 @@ class SignInViewController: UIViewController {
     
     @IBAction func signInGitHubButtonTapped(_ sender: Any) {
         let signInAuthWebViewController = SignInAuthWebViewController()
-        present(signInAuthWebViewController, animated: true)
+        present(signInAuthWebViewController, animated: true, completion: {
+            signInAuthWebViewController.delegate = self
+        })
     }
 }
 
+extension SignInViewController: SignInAuthWebViewControllerDelegate {
+    
+    func didFinishToSignInWithGitHub() {
+        print("success")
+    }
+}
