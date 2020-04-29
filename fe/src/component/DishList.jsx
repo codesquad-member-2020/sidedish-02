@@ -11,7 +11,6 @@ const DishList = ({ dishes }) => {
 
     const [targetId, setTargetId] = useState();
     const [viewDetail, setViewDetail] = useState(false);
-    // const [prevTargetId, setPrevTargetId] = useState("");
 
     const openViewDetail = () => {
         setViewDetail(true);
@@ -37,11 +36,7 @@ const DishList = ({ dishes }) => {
     const dishList = dishes.map((dish) =>
         <>
             <div className="item" id={DISH(dish).ID} onClickCapture={openViewDetail} onClick={() => setTargetId((DISH(dish).ID))}>
-                {viewDetail && (
-                    <ModalPortal>
-                        <DishDetail targetId={targetId} isOpen={viewDetail} onClose={closeViewDetail} />
-                    </ModalPortal>
-                )}
+
                 <div className="item-image_box">
                     <img className="item-image" src={DISH(dish).IMAGE} alt={DISH(dish).ALT} />
                     <div className="overlay">
@@ -66,6 +61,11 @@ const DishList = ({ dishes }) => {
     return (
         <Slider {...settings} className="item-wrap">
             {dishList}
+            {viewDetail && (
+                <ModalPortal>
+                    <DishDetail targetId={targetId} isOpen={viewDetail} onClose={closeViewDetail} />
+                </ModalPortal>
+            )}
         </Slider>
     )
 }

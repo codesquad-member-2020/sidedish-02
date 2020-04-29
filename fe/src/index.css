@@ -253,7 +253,6 @@ code {
 }
 
 .detail-popup {
-  /* visibility: hidden; */
   display: flex;
   justify-content: space-between;
   width: 794px;
@@ -347,6 +346,8 @@ code {
 }
 
 .product-count_box {
+  box-sizing: border-box;
+  width: 55px;
   border: 0.5px solid #a7a5a7;
   padding: 0 20px;
 }
@@ -387,11 +388,10 @@ code {
 }
 
 .dim {
-  /* visibility: hidden; */
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0,0,0,0.3);
   top: 0;
   left: 0;
   z-index: 1;
