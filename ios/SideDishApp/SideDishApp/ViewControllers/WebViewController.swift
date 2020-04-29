@@ -12,10 +12,13 @@ import WebKit
 class WebViewController: UIViewController {
     
     let webView = WKWebView()
+    
+    private let signInSuccessStatusCode: Int = 200
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        webView.navigationDelegate = self
         loadGitHub()
         configureLayout()
     }
@@ -33,5 +36,19 @@ class WebViewController: UIViewController {
         webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+}
+
+extension WebViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        
+        if navigationResponse.response is HTTPURLResponse {
+            let response = navigationResponse.response as! HTTPURLResponse
+            if response.statusCode == signInSuccessStatusCode {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        decisionHandler(.allow)
     }
 }
