@@ -1,6 +1,9 @@
 export default URL = {
     PROD: {
-
+        MAIN_DISH_API: 'http://13.125.185.168:8080/categories/main',
+        SOUP_API: 'http://13.125.185.168:8080/categories/soup',
+        SIDE_DISH_API: 'http://13.125.185.168:8080/categories/side',
+        DETAIL_API: 'http://13.125.185.168:8080/banchan/',
     },
 
     MOCK: {
