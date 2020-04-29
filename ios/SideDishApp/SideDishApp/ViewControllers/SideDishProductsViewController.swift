@@ -27,9 +27,6 @@ class SideDishProductsViewController: UIViewController {
         
         configureTableView()
         configureNavigationBar()
-
-        fetchCategories()
-        
         showSignInViewController()
     }
     
@@ -100,7 +97,7 @@ class SideDishProductsViewController: UIViewController {
 
 extension SideDishProductsViewController: SignInViewControllerDelegate {
     func didSuccessToSignInWithGitHub() {
-        print("real success")
+        fetchCategories()
     }
 }
 
