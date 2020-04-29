@@ -178,7 +178,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAo-yH-eaS">
-                                <rect key="frame" x="28" y="684" width="358" height="48"/>
+                                <rect key="frame" x="28" y="726" width="358" height="48"/>
                                 <color key="backgroundColor" red="0.089823921319796995" green="0.089823921319796995" blue="0.089823921319796995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Ldo-hs-d8P"/>
@@ -192,14 +192,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github.icon" translatesAutoresizingMaskIntoConstraints="NO" id="dih-W9-uUI">
-                                <rect key="frame" x="117" y="698" width="20" height="20"/>
+                                <rect key="frame" x="117" y="740" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="WgD-IK-Dde"/>
                                     <constraint firstAttribute="width" constant="20" id="gNp-Dr-N4a"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with GitHub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5U-S7-JnM">
-                                <rect key="frame" x="145" y="698" width="148.5" height="20"/>
+                                <rect key="frame" x="145" y="740" width="148.5" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -221,7 +221,7 @@
                             <constraint firstAttribute="bottom" secondItem="Gi9-1c-4cC" secondAttribute="bottom" id="XjQ-CM-tIX"/>
                             <constraint firstItem="mHK-eT-FlT" firstAttribute="leading" secondItem="hAr-2F-FaA" secondAttribute="leading" constant="48" id="cf8-eg-dig"/>
                             <constraint firstItem="dih-W9-uUI" firstAttribute="centerY" secondItem="OAo-yH-eaS" secondAttribute="centerY" id="ecO-As-zbp"/>
-                            <constraint firstItem="hAr-2F-FaA" firstAttribute="bottom" secondItem="OAo-yH-eaS" secondAttribute="bottom" constant="130" id="gtS-bO-LjK"/>
+                            <constraint firstItem="hAr-2F-FaA" firstAttribute="bottom" secondItem="OAo-yH-eaS" secondAttribute="bottom" constant="88" id="gtS-bO-LjK"/>
                             <constraint firstItem="74e-0d-PFZ" firstAttribute="leading" secondItem="usb-e7-g2S" secondAttribute="leading" id="gxZ-e2-soo"/>
                             <constraint firstAttribute="bottom" secondItem="74e-0d-PFZ" secondAttribute="bottom" id="hWc-wz-yZ2"/>
                             <constraint firstItem="hAr-2F-FaA" firstAttribute="trailing" secondItem="OAo-yH-eaS" secondAttribute="trailing" constant="28" id="sWG-M8-M7g"/>
