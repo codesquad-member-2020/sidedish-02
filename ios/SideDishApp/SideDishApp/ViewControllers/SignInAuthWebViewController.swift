@@ -16,6 +16,7 @@ protocol SignInAuthWebViewControllerDelegate {
 class SignInAuthWebViewController: UIViewController {
     
     let webView = WKWebView()
+    let activityIndicatorView = UIActivityIndicatorView(style: .medium)
     
     var delegate: SignInAuthWebViewControllerDelegate?
     
@@ -42,10 +43,23 @@ class SignInAuthWebViewController: UIViewController {
         webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        webView.addSubview(activityIndicatorView)
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicatorView.centerXAnchor.constraint(equalTo: webView.centerXAnchor).isActive = true
+        activityIndicatorView.centerYAnchor.constraint(equalTo: webView.centerYAnchor).isActive = true
     }
 }
 
 extension SignInAuthWebViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        activityIndicatorView.startAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicatorView.stopAnimating()
+    }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         
@@ -53,6 +67,7 @@ extension SignInAuthWebViewController: WKNavigationDelegate {
             let response = navigationResponse.response as! HTTPURLResponse
             if response.statusCode == signInSuccessStatusCode {
                 self.dismiss(animated: true, completion: {
+                    self.activityIndicatorView.isHidden = true
                     self.delegate?.didFinishAuthorizeToGitHub()
                 })
             }
