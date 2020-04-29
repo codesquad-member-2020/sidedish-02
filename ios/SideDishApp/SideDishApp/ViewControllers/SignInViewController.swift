@@ -10,6 +10,8 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    static let identifier: String = "SignInViewController"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

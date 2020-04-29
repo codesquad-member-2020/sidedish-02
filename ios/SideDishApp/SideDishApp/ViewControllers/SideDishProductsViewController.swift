@@ -29,6 +29,14 @@ class SideDishProductsViewController: UIViewController {
         configureNavigationBar()
 
         fetchCategories()
+        
+        showSignInViewController()
+    }
+    
+    private func showSignInViewController() {
+        guard let signInViewController = storyboard?.instantiateViewController(identifier: SignInViewController.identifier) else { return }
+        signInViewController.modalPresentationStyle = .fullScreen
+        present(signInViewController, animated: true)
     }
     
     private func fetchCategories() {
