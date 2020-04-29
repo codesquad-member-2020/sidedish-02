@@ -33,6 +33,16 @@ code {
   font-weight: bold;
 }
 
+.login {
+  color: #484035;
+  margin: 5px;
+  position: absolute;
+}
+
+.login:hover {
+  color: #32C4BE;
+}
+
 .menu-brand {
   background-color: #362D25;
 }
@@ -253,11 +263,9 @@ code {
 }
 
 .detail-popup {
-  display: flex;
-  justify-content: space-between;
   width: 794px;
   position: fixed;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #FFFFFF;
@@ -266,6 +274,11 @@ code {
   z-index: 2;
   font-size: small;
   font-weight: bold;
+}
+
+.detail-popup .buy-wrap {
+  display: flex;
+  justify-content: space-between;
 }
 
 .detail-popup .top-image {
@@ -285,7 +298,6 @@ code {
 
 .product-wrap {
   position: relative;
-  /* width: 450px; */
 }
 
 .detail-popup .close-btn {
@@ -296,12 +308,14 @@ code {
 }
 
 .detail-popup .title {
+  width: 433px;
+  height: 26px;
   font-size: x-large;
   font-weight: bold;
   margin-bottom: 10px;  
-  /* white-space: nowrap;
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; */
+  text-overflow: ellipsis;
 }
 
 .detail-popup .description-wrap {
@@ -385,6 +399,18 @@ code {
   margin-top: 10px;
   font-size: large;
   font-weight: bold;
+}
+
+.detail-popup .detail-image-wrap {
+  display: flex;
+  height: 300px;
+  text-align: -webkit-center;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.detail-popup .detail-image {
+  width: 500px;
 }
 
 .dim {
