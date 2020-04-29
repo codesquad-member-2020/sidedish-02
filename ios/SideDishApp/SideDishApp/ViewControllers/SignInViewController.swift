@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol SignInViewControllerDelegate {
+    func didSuccessToSignInWithGitHub()
+}
+
 class SignInViewController: UIViewController {
 
     @IBOutlet weak var signInGitHubButton: UIButton!
     
     static let identifier: String = "SignInViewController"
+    
+    var delegate: SignInViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +41,8 @@ class SignInViewController: UIViewController {
 extension SignInViewController: SignInAuthWebViewControllerDelegate {
     
     func didFinishAuthorizeToGitHub() {
-        print("success")
+        self.dismiss(animated: true) {
+            self.delegate?.didSuccessToSignInWithGitHub()
+        }
     }
 }
