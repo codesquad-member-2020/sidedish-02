@@ -20,7 +20,7 @@ class WebViewController: UIViewController {
         configureLayout()
     }
     
-    private loadGitHub() {
+    private func loadGitHub() {
         guard let url = URL(string:"https://github.com/login/oauth/authorize?client_id=5d89cbaa5b442d53d545") else {return}
         let request = URLRequest(url: url)
         webView.load(request)
