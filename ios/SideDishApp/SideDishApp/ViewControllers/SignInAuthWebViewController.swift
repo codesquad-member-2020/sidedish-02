@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 protocol SignInAuthWebViewControllerDelegate {
-    func didFinishToSignInWithGitHub()
+    func didFinishAuthorizeToGitHub()
 }
 
 class SignInAuthWebViewController: UIViewController {
@@ -53,7 +53,7 @@ extension SignInAuthWebViewController: WKNavigationDelegate {
             let response = navigationResponse.response as! HTTPURLResponse
             if response.statusCode == signInSuccessStatusCode {
                 self.dismiss(animated: true, completion: {
-                    self.delegate?.didFinishToSignInWithGitHub()
+                    self.delegate?.didFinishAuthorizeToGitHub()
                 })
             }
         }

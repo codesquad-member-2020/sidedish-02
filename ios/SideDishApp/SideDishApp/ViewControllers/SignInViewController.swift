@@ -34,7 +34,7 @@ class SignInViewController: UIViewController {
 
 extension SignInViewController: SignInAuthWebViewControllerDelegate {
     
-    func didFinishToSignInWithGitHub() {
+    func didFinishAuthorizeToGitHub() {
         print("success")
     }
 }
