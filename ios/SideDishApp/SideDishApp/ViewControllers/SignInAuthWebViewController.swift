@@ -1,5 +1,5 @@
 //
-//  WebViewController.swift
+//  SignInAuthWebViewController.swift
 //  SideDishApp
 //
 //  Created by Cory Kim on 2020/04/29.
@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController {
+class SignInAuthWebViewController: UIViewController {
     
     let webView = WKWebView()
     
@@ -39,7 +39,7 @@ class WebViewController: UIViewController {
     }
 }
 
-extension WebViewController: WKNavigationDelegate {
+extension SignInAuthWebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         
