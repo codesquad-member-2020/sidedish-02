@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ModalPortal from '../ModalPortal';
 import Slider from "react-slick";
 import DishDetail from './DishDetail';
@@ -9,15 +9,9 @@ import "slick-carousel/slick/slick-theme.css";
 const DishList = ({ dishes }) => {
     const DISH = (dish) => NAME(dish).PROD;
 
-    // const [targetId, setTargetId] = useState("HBDEF");
+    const [targetId, setTargetId] = useState();
     const [viewDetail, setViewDetail] = useState(false);
-
-    // const cviewDetail = (e) => {
-    //     const targetId = e.target.closest("li").id;
-    //     console.log(targetId);
-    //     setTargetId(targetId);
-    //     // DishDetail(targetId);
-    // }
+    // const [prevTargetId, setPrevTargetId] = useState("");
 
     const openViewDetail = () => {
         setViewDetail(true);
@@ -42,12 +36,10 @@ const DishList = ({ dishes }) => {
 
     const dishList = dishes.map((dish) =>
         <>
-            <div className="item" id={DISH(dish).ID} onClickCapture={openViewDetail, DISH(dish).ID}>
+            <div className="item" id={DISH(dish).ID} onClickCapture={openViewDetail} onClick={() => setTargetId((DISH(dish).ID))}>
                 {viewDetail && (
-                    <ModalPortal>m
-                        {/* {targetId ? <DishDetail targetId={targetId} /> : null} */}
-                        <DishDetail targetId={DISH(dish).ID} isOpen={viewDetail} onClose={closeViewDetail} />
-                        {/* {setViewDetail(false)} */}
+                    <ModalPortal>
+                        <DishDetail targetId={targetId} isOpen={viewDetail} onClose={closeViewDetail} />
                     </ModalPortal>
                 )}
                 <div className="item-image_box">
@@ -77,4 +69,5 @@ const DishList = ({ dishes }) => {
         </Slider>
     )
 }
+
 export default DishList

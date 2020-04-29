@@ -2,30 +2,22 @@ import React, { useState, useEffect } from 'react';
 import URL from '../constants/url';
 
 const DishDetail = ({ targetId, isOpen, onClose }) => {
-    const [targetDish, setTargetDish] = useState([]);
+    const [targetDish, setTargetDish] = useState({});
     const [productCount, setProductCount] = useState(0);
-    // const [topImage, setTopImage] = useState(targetDish.thumbImages[0]);
-    // const [viewDetail, setViewDetail] = useState(true);
-
-    // const onClose = () => {
-    //     setViewDetail(false);
-    // }
+    const [topImage, setTopImage] = useState();
+    const [images, setImages] = useState([]);
 
     const fetchInitialData = async () => {
         const targetDishData = await fetchJSON(URL.PROD.DETAIL_API + targetId);
-        console.log(targetDishData.description)
+        console.log("dishDetail-fetch : " + targetDishData.description)
         setTargetDish(targetDishData);
+        setTopImage(targetDishData.thumbImages[0]);
+        setImages(targetDishData.thumbImages);
     }
 
     const configureImages = () => {
-        // return targetDish.thumbImages.map(img => <img className="thumb-image" src={img} onMouseOver={selectImage}/>) 
-        // return Array.from(targetDish.thumbImages).map(img => <img className="thumb-image" src={img} />) 
-        // return targetDish.thumbImages.array.map(img => <img className="thumb-image" src={img} />) 
+        return images.map(img => <img className="thumb-image" src={img} onMouseOver={() => setTopImage(img)}/>) 
     }
-
-    // const selectImage = () => {
-    //     setTopImage()
-    // }
 
     const clickUpButton = () => {
         setProductCount(productCount + 1);
@@ -47,20 +39,9 @@ const DishDetail = ({ targetId, isOpen, onClose }) => {
             <div className="dim"></div>
             <div className="detail-popup">
                 <div className="image-wrap">
-                    <img className="top-image" src={targetDish.topImage} alt={targetDish.alt}/>
-                    {/* <img className="top-image" src={topImage} /> */}
+                    <img className="top-image" src={topImage} alt={targetDish.alt}/>
                     <div className="thumb-images">
-                        {/* {configureImages()} */}
-                        {/* {console.log(targetDish.thumbImages)}
-                        {console.log(typeof(targetDish.thumbImages))} */}
-                        {/* <img className="thumb-image"
-                            src={targetDish.thumbImages[0]} /> */}
-                        <img className="thumb-image"
-                            src="http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/6ef14155afc5b47e8c9efd762f7a6096.jpg" />
-                        <img className="thumb-image"
-                            src="http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/8744504ff3bc315f901dca1f26fe63a1.jpg" />
-                        <img className="thumb-image"
-                            src="http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/e30bd6de9340fc05db3cd1d1329b2c56.jpg" />
+                        {configureImages()}
                     </div>
                 </div>
                 <div className="product-wrap">

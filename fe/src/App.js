@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { css, jsx } from '@emotion/core';
-import styled from '@emotion/styled';
+// import { css, jsx } from '@emotion/core';
+// import styled from '@emotion/styled';
 import DishWrap from './component/DishWrap';
 import URL from './constants/url';
-
 // import './App.css';
 
 const App = () => {
