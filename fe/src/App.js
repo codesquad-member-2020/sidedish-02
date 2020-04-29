@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import { css, jsx } from '@emotion/core';
 // import styled from '@emotion/styled';
+import Login from './component/Login';
 import DishWrap from './component/DishWrap';
 import URL from './constants/url';
 // import './App.css';
@@ -36,6 +37,7 @@ const App = () => {
 
   return (
     <>
+      <Login />
       <section className="side_dish-wrap">
         <DishWrap dishes={sideDish} category='밑반찬' description='언제 먹어도 든든한' bold='밑반찬' />
       </section>
