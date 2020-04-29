@@ -11,6 +11,8 @@
 		3812772124574FAC000BDF82 /* ThumbnailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812772024574FAC000BDF82 /* ThumbnailViewController.swift */; };
 		381D92FA245174C30067C07A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D92F9245174C30067C07A /* DetailViewController.swift */; };
 		3825BC732458B798004F5DE0 /* ImageIndexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3825BC722458B798004F5DE0 /* ImageIndexStackView.swift */; };
+		383177B024594BE30044012E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383177AF24594BE30044012E /* SignInViewController.swift */; };
+		383177B2245953EB0044012E /* SignInAuthWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383177B1245953EB0044012E /* SignInAuthWebViewController.swift */; };
 		385E343A2452016B00931F8B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E34392452016B00931F8B /* NetworkManager.swift */; };
 		3868CC4D244F17F6008DEC81 /* PriceLabelsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */; };
 		3868CC4F244F18E3008DEC81 /* OriginalPriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868CC4E244F18E3008DEC81 /* OriginalPriceLabel.swift */; };
@@ -45,6 +47,8 @@
 		3812772024574FAC000BDF82 /* ThumbnailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailViewController.swift; sourceTree = "<group>"; };
 		381D92F9245174C30067C07A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3825BC722458B798004F5DE0 /* ImageIndexStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIndexStackView.swift; sourceTree = "<group>"; };
+		383177AF24594BE30044012E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		383177B1245953EB0044012E /* SignInAuthWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAuthWebViewController.swift; sourceTree = "<group>"; };
 		385E34392452016B00931F8B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3868CC4C244F17F6008DEC81 /* PriceLabelsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabelsStackView.swift; sourceTree = "<group>"; };
 		3868CC4E244F18E3008DEC81 /* OriginalPriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalPriceLabel.swift; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				381D92F9245174C30067C07A /* DetailViewController.swift */,
 				38E2FCD42457456400817780 /* ThumbnailsPageViewController.swift */,
 				3812772024574FAC000BDF82 /* ThumbnailViewController.swift */,
+				383177AF24594BE30044012E /* SignInViewController.swift */,
+				383177B1245953EB0044012E /* SignInAuthWebViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -374,9 +380,11 @@
 				3868CC55244F1E89008DEC81 /* UIStackView+Extension.swift in Sources */,
 				38A6630F2455C8DD00E15F88 /* ProductHeaderView.swift in Sources */,
 				3868CC632450656E008DEC81 /* CategoryLabel.swift in Sources */,
+				383177B2245953EB0044012E /* SignInAuthWebViewController.swift in Sources */,
 				38BB4B072458102300B86451 /* DetailImagesStackView.swift in Sources */,
 				3868CC61245039F6008DEC81 /* BadgeLabelsStackView.swift in Sources */,
 				3868CC5F24501BAF008DEC81 /* BadgeLabel.swift in Sources */,
+				383177B024594BE30044012E /* SignInViewController.swift in Sources */,
 				385E343A2452016B00931F8B /* NetworkManager.swift in Sources */,
 				38E0AF672452FB7700A26CB3 /* Category.swift in Sources */,
 				38E0AF632452FB4300A26CB3 /* Product.swift in Sources */,

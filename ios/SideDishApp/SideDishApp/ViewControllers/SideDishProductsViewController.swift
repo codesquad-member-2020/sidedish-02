@@ -27,8 +27,15 @@ class SideDishProductsViewController: UIViewController {
         
         configureTableView()
         configureNavigationBar()
-
-        fetchCategories()
+        showSignInViewController()
+    }
+    
+    private func showSignInViewController() {
+        guard let signInViewController = storyboard?.instantiateViewController(identifier: SignInViewController.identifier) as? SignInViewController else { return }
+        signInViewController.modalPresentationStyle = .fullScreen
+        present(signInViewController, animated: true, completion: {
+            signInViewController.delegate = self
+        })
     }
     
     private func fetchCategories() {
@@ -85,6 +92,12 @@ class SideDishProductsViewController: UIViewController {
         
         tableView.register(ProductHeaderView.self, forHeaderFooterViewReuseIdentifier: ProductHeaderView.reuseIdentifier)
         tableView.showsVerticalScrollIndicator = false
+    }
+}
+
+extension SideDishProductsViewController: SignInViewControllerDelegate {
+    func didSuccessToSignInWithGitHub() {
+        fetchCategories()
     }
 }
 
